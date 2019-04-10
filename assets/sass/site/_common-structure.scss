@@ -19,17 +19,13 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 .clear { *zoom: 1; }
 .clear {clear: both;}
 .wrapper {
+	max-width: 1200px;
 	width: 100%;
 	margin: 0px auto;
-	padding: 20px;
-	
-	@media screen and (min-width: $tabwidth) {
-		width: 100%;
-	}
-	@media screen and (min-width: $deskwidth) {
-		width: 1200px;
-		padding: 0px;
-	}
+	box-sizing: border-box;
+	padding-left: 20px;
+	padding-right: 20px;
+	position: relative;
 }
 
 .content-area {
@@ -61,30 +57,31 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 }
 
 /* Logo */
-.logo , h1.logo {
+.logo {
+	display: inline-block;
 	width: 300px;
 	margin: 10px auto;
-
+	position: absolute;
+	top: 0;
+	left: 0;
 	@media screen and (min-width: $tabwidth) {
 		width: 300px;
+	}
+	a, img {
+		display: block;
+		width: 100%;
+		height: auto;
 		float: left;
-		margin: 0;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
 	}
 }
-.logo a, h1.logo a {
-	width: 300px;
-	display: block;
 
-	@media screen and (min-width: $tabwidth) {
-		width: 300px;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
-	}
+.site-header {
+	background: $color-navy;
+	color: #FFF;
+	position: relative;
+	
 }
+
 .site-footer {
 	width: 100%;
 	clear: both;

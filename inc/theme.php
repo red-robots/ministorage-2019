@@ -16,14 +16,18 @@ function my_login_logo() {
   $logo_url = ($logoImg) ? $logoImg[0] : '';
   if($custom_logo_id) { ?>
   <style type="text/css">
-    body.login div#login h1 a {
-      <?php if($logo_url) { ?>
+      div#login h1 {
+        padding: 10px;
+        background-color: #16325b;
+        margin-bottom: 10px;
+      }
+      body.login div#login h1 a {
         background-image: url(<?php echo $logo_url; ?>);
-      <?php } ?> 
-      background-size: contain;
-      width: 100%;
-      height: 67px;
-    }
+        background-size: contain;
+        width: 100%;
+        height: 67px;
+        margin: 0 0;
+      }
   </style>
 <?php }
 }
