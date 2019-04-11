@@ -73,16 +73,16 @@ function js_custom_init() {
 // Add new taxonomy, make it hierarchical (like categories)
 add_action( 'init', 'ii_custom_taxonomies', 0 );
 function ii_custom_taxonomies() {
-        $posts = array();
-        // $posts = array(
-        //     array(
-        //         'post_type' => 'position',
-        //         'menu_name' => 'Categories',
-        //         'plural'    => 'Assignment Categories',
-        //         'single'    => 'Category',
-        //         'taxonomy'  => 'position_categories'
-        //     ),
-        // );
+    $posts = array();
+    $posts = array(
+        array(
+            'post_type' => 'location',
+            'menu_name' => 'States',
+            'plural'    => 'States',
+            'single'    => 'State',
+            'taxonomy'  => 'location_states'
+        ),
+    );
     
     if($posts) {
         foreach($posts as $p) {
@@ -91,7 +91,6 @@ function ii_custom_taxonomies() {
             $plural_name = ( isset($p['plural']) && $p['plural'] ) ? $p['plural'] : "Custom Post"; 
             $menu_name = ( isset($p['menu_name']) && $p['menu_name'] ) ? $p['menu_name'] : $p['plural'];
             $taxonomy = ( isset($p['taxonomy']) && $p['taxonomy'] ) ? $p['taxonomy'] : "";
-            
             
             if( $taxonomy && $p_type ) {
                 $labels = array(
@@ -106,59 +105,20 @@ function ii_custom_taxonomies() {
                     'update_item' => __( 'Update ' . $single_name ),
                     'add_new_item' => __( 'Add New ' . $single_name ),
                     'new_item_name' => __( 'New ' . $single_name ),
-                  );
+                );
 
-              register_taxonomy($taxonomy,array($p_type), array(
+              register_taxonomy($taxonomy, $p_type, array(
                 'hierarchical' => true,
                 'labels' => $labels,
                 'show_ui' => true,
+                'show_in_rest' => true,
+                'show_admin_column' => true,
                 'query_var' => true,
                 'rewrite' => array( 'slug' => $taxonomy ),
               ));
             }
-            
+
         }
     }
 }
 
-// Add the custom columns to the position post type:
-add_filter( 'manage_posts_columns', 'set_custom_cpt_columns' );
-function set_custom_cpt_columns($columns) {
-    global $wp_query;
-    $query = isset($wp_query->query) ? $wp_query->query : '';
-    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
-    
-    
-    if($post_type=='team') {
-        unset( $columns['date'] );
-        $columns['photo'] = __( 'Photo', 'acstarter' );
-        $columns['date'] = __( 'Date', 'acstarter' );
-    }
-    
-    return $columns;
-}
-
-// Add the data to the custom columns for the book post type:
-add_action( 'manage_posts_custom_column' , 'custom_post_column', 10, 2 );
-function custom_post_column( $column, $post_id ) {
-    global $wp_query;
-    $query = isset($wp_query->query) ? $wp_query->query : '';
-    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
-    
-    if($post_type=='team') {
-        switch ( $column ) {
-            case 'photo' :
-                $img = get_field('team_individual_image',$post_id);
-                $img_src = ($img) ? $img['sizes']['thumbnail'] : '';
-                $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
-                if($img_src) {
-                   $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';
-                } else {
-                    $the_photo .= '<i class="dashicons dashicons-businessman" style="font-size:33px;position:relative;top:8px;left:-6px;opacity:0.3;"></i>';
-                }
-                $the_photo .= '</span>';
-                echo $the_photo;
-        }
-    }
-    
-}
