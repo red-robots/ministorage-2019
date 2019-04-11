@@ -252,7 +252,10 @@
 	.boxinfo.has-inner-content:hover {
 		.boxcontentwrap {
 			margin-top: -130%;
-			@media screen and (min-width: $tabwidth) {
+			@media screen and (min-width: $midwidth) {
+				margin-top: -135%;
+			}
+			@media screen and (min-width: $deskwidth) {
 				margin-top: -115%;
 			}
 		}
