@@ -24,20 +24,29 @@
 <div id="page" class="site">
 	<header id="masthead" class="site-header clear" role="banner">
 		<div class="wrapper clear">
-			<?php if( get_custom_logo() ) { ?>
-	            <div class="logo">
-	            	<?php the_custom_logo(); ?>
-	            </div>
-	        <?php } else { ?>
-	            <h1 class="logo">
-		            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-	            </h1>
-	        <?php } ?>
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<span id="toggleMenu" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'acstarter' ); ?><i></i></span>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class'=>'main-menu-wrapper' ) ); ?>
-			</nav><!-- #site-navigation -->
+			<div class="innerwrap clear">
+				<?php if( get_custom_logo() ) { ?>
+		            <div class="logo">
+		            	<?php the_custom_logo(); ?>
+		            </div>
+		        <?php } else { ?>
+		            <h1 class="logo">
+			            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+		            </h1>
+		        <?php } ?>
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<span id="toggleMenu" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'acstarter' ); ?><span><i></i></span></span>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class'=>'main-menu-wrapper','link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
+					<?php 
+						$hdr_button_name = get_field('header_button_name','option'); 
+						$hdr_button_link = get_field('header_button_link','option'); 
+					?>
+					<?php if ($hdr_button_name && $hdr_button_link) { ?>
+						<a class="header-button" href="<?php echo $hdr_button_link ?>"><span><?php echo $hdr_button_name ?></span></a>
+					<?php } ?>
+				</nav><!-- #site-navigation -->
+			</div>
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content wrapper clear">
+	<div id="content" class="site-content clear">

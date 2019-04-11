@@ -43,4 +43,19 @@ jQuery(document).ready(function ($) {
 		$('body').toggleClass('open-mobile-menu');
 	});
 
+	// $(document).on("click",".boxinfo.has-inner-content",function(e){
+	// 	e.preventDefault();
+	// 	$(this).addClass('open');
+	// 	// var parent = $(this).parents(".flexcol");
+	// 	// parent.find('.box-inner-content').addClass('show');
+	// });
+
+	$(".boxinfo.has-inner-content").hover(
+		function(){
+			$(this).addClass('open');
+		}, function () {
+			$(this).removeClass('open');
+		}
+	);
+
 });// END #####################################    END

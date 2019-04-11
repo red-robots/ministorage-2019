@@ -15,11 +15,15 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
+a {
+	@include transition(all ease-out .3s);
+}
+.text-center {text-align: center;}
+.flexrow:before, .flexrow:after,
 .clear:before, .clear:after { content: " "; display: table; }
-.clear { *zoom: 1; }
-.clear {clear: both;}
+.flexrow, .clear { *zoom: 1; clear: both; }
 .wrapper {
-	max-width: 1200px;
+	max-width: 1240px;
 	width: 100%;
 	margin: 0px auto;
 	box-sizing: border-box;
@@ -59,12 +63,18 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 /* Logo */
 .logo {
 	display: inline-block;
-	width: 300px;
-	margin: 10px auto;
+	width: 160px;
+	margin-top: 10px;
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 20px;
+	z-index: 110;
 	@media screen and (min-width: $tabwidth) {
+		left: 0;
+		width: 200px;
+		margin-top: 15px;
+	}
+	@media screen and (min-width: $midwidth) {
 		width: 300px;
 	}
 	a, img {
@@ -79,7 +89,18 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	background: $color-navy;
 	color: #FFF;
 	position: relative;
-	
+	z-index: 100;
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+		@media screen and (min-width: $tabwidth) {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	.innerwrap {
+		position: relative;
+	}
 }
 
 .site-footer {

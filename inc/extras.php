@@ -407,3 +407,29 @@ function get_instagram_setup() {
     }
     return $option;
 }
+
+function is_same_root_url($url,$site_url) {
+    if($url && $site_url) {
+        $parse1 = parse_url($url);
+        $parse2 = parse_url($site_url);
+        $host1 = ( isset($parse1['host']) && $parse1['host'] ) ? $parse1['host']:'';
+        $host2 = ( isset($parse2['host']) && $parse2['host'] ) ? $parse2['host']:'';
+        if($host1==$host2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+function custom_excerpt_length( $length ) {
+    return 50;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function trim_excerpt($text) {
+    $text = str_replace('[&hellip;]', '', $text);
+    $text = rtrim($text,' ');
+    return $text.'...';
+}
+add_filter('get_the_excerpt', 'trim_excerpt');

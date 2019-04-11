@@ -1,104 +1,475 @@
-.sticky {
-	display: block;
-}
-
-.hentry {
-	margin: 0 0 1.5em;
-}
-
-.byline,
-.updated:not(.published){
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-.faqrow {
-	width: auto;
-	overflow: hidden;
-	margin: 0 0 20px 0;	
-	background-color: rgba(255,255,255,.05);
-	border-radius: 10px;
-}
-.question {
-	width: auto;
-	float:left;
-	margin: 10px;
-	font-weight: bold;
-	font-size: 20px;
-	cursor:pointer;	
-	line-height: 1.3;
+.flexrow {
 	position: relative;
-	padding: 0 0 0 20px ;
+	margin-left: -15px;
+	margin-right: -15px;
+	@media screen and (min-width: $tabwidth) {
+		@include flexbox();
+		@include flexbox-wrap(wrap);
+		@include flexbox-direction(row);
+	}
+	.flexcol {
+		position: relative;
+		box-sizing: border-box;
+	}
 }
-.question-image {
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	left: 0px;
-	top: 3px;
-	background-image: url(images/faq.png);
-	background-repeat: no-repeat;
-	background-position: 0 0;	
+
+.site-content {
+	padding-top: 30px;
+	@media screen and (min-width: $tabwidth) {
+		padding-top: 100px;
+	}
 }
-.question-image.close {
-	background-position: -15px 0;	
+
+.section-home-boxes {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	@media screen and (min-width: $tabwidth) {
+		padding-bottom: 50px;
+	}
 }
-.answer {
+.home-three-boxes {
+	.flexcol {
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 100%;
+		margin-bottom: 30px;
+		@media screen and (min-width: $midwidth) {
+			width: 33.3%;
+			float: left;
+			margin-bottom: 0;
+		}
+	}
+	.inside {
+		background-color: $color-dark-blue;
+		color: #FFF;
+		position: relative;
+		width: 330px;
+		height: 400px;
+		overflow: hidden;
+		margin: 0 auto;
+		@media screen and (min-width: $tabwidth) {
+			width: 360px;
+			height: 400px;
+		}
+		@media screen and (min-width: $midwidth) {
+			width: 100%;
+			height: 395px;
+		}
+	}
+	.boxinfo {
+		display: block;
+		text-decoration: none;
+		color: #FFF;
+		padding: 20px 40px;
+		position: relative;
+		height: 100%;
+		box-sizing: border-box;
+		z-index: 25;
+	}
+	.boxcontentwrap {
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: $color-navy;
+		background-image:url('images/box-blue-bg.png');
+		background-position: top center;
+		background-repeat: repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-top: 0;
+		z-index: 10;
+		@include flexbox();
+		@include flexbox-justify(center);
+		@include flexbox-align-items(center);
+		@include transition(all ease-out .7s);
+		&:before {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			box-shadow: inset 0px 0px 40px 0px rgba(0,0,0,0.21);
+		}
+		&:after {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 25px;
+			background-image:url('images/door_handle.png');
+			background-repeat:no-repeat;
+			background-position: center;
+			background-size: cover;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	.textwrap {
+		position: relative;
+		z-index: 10;
+		padding: 20px 40px;
+		span {
+			display: block;
+			width: 100%;
+		}
+	}
+	.txt1 {
+		font-weight: 600;
+		font-size: 23px;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+	.txt2 {
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 1.5;
+		margin-top: 10px;
+	}
+	.icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 4;
+		opacity: 0.08;
+		@include transition(all ease-out .7s);
+		img {
+			width: 44%;
+			height: auto;
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	.box-inner-content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow-y: scroll;
+		background: $color-dark-blue;
+		color: #FFF;
+	}
+	.box-inner-pad {
+		text-align: left;
+		padding: 72px 20px 20px;
+		position: relative;
+		line-height: 1.4;
+		font-size: 13px;
+		ul,ol {
+			margin: 0 0;
+			padding: 0 0;
+			list-style: none;
+		}
+		li {
+			line-height: 1.3;
+			font-size: 13px;
+			padding-bottom: 3px;
+		}
+		p {
+			margin-top: 0;
+			margin-bottom: 15px;
+		}
+		a {
+			color: #FFF;
+			text-decoration: none;
+			font-size: 12px;
+			display: inline-block;
+			padding: 1px 0;
+			&:hover {
+				color: $color-red;
+			}
+		}
+		&.has-image {
+			ul,ol { 
+				float: left;
+    			display: inline-block;
+			}
+			.boxinnertxt {
+				width: 70%;
+				float: left;
+			}
+		}
+	}
+
+
+	.box-inner-image {
+		display: inline-block;
+		width: 30%;
+		float: left;
+		position: relative;
+		overflow: hidden;
+		padding-left: 2px;
+		a,img {
+			display: block;
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+		.btntxt {
+			display: block;
+			background: $color-green;
+			color: #FFF;
+			font-weight: 300;
+			font-size: 13px;
+			line-height: 1.2;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 5px 5px 3px;
+		    float: left;
+		    width: 100%;
+		}
+		a:hover {
+			opacity: 0.6;
+		}
+	}
+
+	.inner-title {
+		width: 100%;
+		padding: 20px 20px 22px;
+		color: #FFF;
+		position: absolute;
+		top: 0;
+		z-index: 5;
+		.pad {
+			background: $color-red;
+			width: 100%;
+			padding: 5px 10px;
+		}
+		.txt1 {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.boxinfo.has-inner-content.open,
+	.boxinfo.has-inner-content:hover {
+		.boxcontentwrap {
+			margin-top: -130%;
+			@media screen and (min-width: $tabwidth) {
+				margin-top: -115%;
+			}
+		}
+		.box-inner-content {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+
+.section-home-features {
+	background: $color-red;
+	color: #FFF;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	@media screen and (min-width: $tabwidth) {
+		padding-top: 40px;
+		padding-bottom: 45px;
+	}
+	.wrapper {
+		@media screen and (min-width: $tabwidth) {
+			max-width: 1000px;
+		}
+	}
+}
+.home-icons-features {
+	text-align: center;
+	@media screen and (min-width: $tabwidth) {
+		@include flexbox();
+		@include flexbox-justify(flex-start);
+		@include flexbox-align-items(flex-start);
+		@include flexbox-align-content(flex-start);
+	}
+	.flexcol {
+		display: block;
+		width: 100%;
+		margin-top: 35px;
+		@media screen and (min-width: $tabwidth) {
+			display: inline-block;
+			margin-top: 0;
+		}
+		.inside {
+			padding-left: 0;
+			padding-right: 0;
+			@media screen and (min-width: $tabwidth) {
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+			@media screen and (min-width: $midwidth) {
+				padding-left: 40px;
+				padding-right: 40px;
+			}
+		}
+		&.first {
+			margin-top: 0;
+		}
+	}
+	.icondiv img {
+		width: 100px;
+		height: auto;
+		margin-bottom: 10px;
+		@media screen and (min-width: $tabwidth) {
+			width: 90px;
+		}
+	}
+	.titlediv h3 {
+		margin: 0 0;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.3;
+		color: #FFF;
+		text-transform: uppercase;
+	}
+}
+
+.section-home-bottom {
+	.noflexrow {
+		position: relative;
+		width: 100%;
+		float: left;
+		@media screen and (min-width: $tabwidth) {
+			&:after {
+				content:"";
+				display: block;
+				width: 36%;
+				height: 100%;
+				background: $color-light-grey;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+	.flexcol {
+		position: relative;
+		z-index: 5;
+	}
+}
+
+.section-home-storage {
+	padding-top: 50px;
+	padding-bottom: 40px;
+	@media screen and (min-width: $tabwidth) {
+		width: 60%;
+		float: left;
+	}
+	.section-title {
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 1.3;
+		margin: 0 0 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid $color-red;
+	}
+	.section-textwrap {
+		margin-bottom: 30px;
+	}
+	.storage-column {
+		@media screen and (min-width: $tabwidth) {
+			width: 41%;
+			float: left;
+		}
+		h3 {
+			margin: 0 0 10px;
+			font-size: 20px;
+			font-weight: 600;
+		}
+		ul {
+			margin: 0 0;
+			padding: 0 0;
+		}
+		li {
+			list-style: none;
+			position: relative;
+			font-size: 14px;
+			line-height: 1.4;
+			margin-bottom: 10px;
+			@media screen and (min-width: $tabwidth) {
+				padding-right: 20px;
+			}
+			a {
+				color: $color-navy;
+				text-decoration: none;
+				&:hover {
+					color: $color-red;
+				}
+			}
+		}
+	}
+	.storage-column-map {
+		text-align: right;
+		@media screen and (min-width: $tabwidth) {
+			width: 18%;
+			float: right;
+		}
+		a {
+			text-decoration: none;
+			display: inline-block;
+		}
+		img {
+			height: auto;
+			width: 110px;
+		}
+	}
+}
+.section-home-news {
+	background: $color-light-grey;
+	@media screen and (min-width: $tabwidth) {
+		width: 36%;
+		float: right;
+	}
+	.inside {
+		padding: 30px 20px 10px;
+		@media screen and (min-width: $tabwidth) {
+			padding: 50px 40px 20px;
+		}
+	}
+	.section-title {
+		margin: 0 0;
+		padding: 3px 5px 1px;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 1.3;
+		text-transform: uppercase;
+		color: #FFF;
+		background: $color-navy;
+	}
+}
+.home-latest-news {
+	overflow-x: hidden;
+	overflow-y: scroll;
 	width: 100%;
-	float:left;
-	margin: 10px;
-	font-size: 14px;
-	line-height: 1.3;
-	padding: 0 0 0 40px;
-	display:none;
-}
-.plus-minus-toggle {
-    cursor: pointer;
-    height: 21px;
-    position: absolute;
-    width: 21px;
-    left:-10px;
-    top:40%;
-    z-index:2;
-
-    &:before,
-    &:after {
-      background: #eee;
-      content: '';
-      height: 5px;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 21px;
-      transition: transform 500ms ease;
-    }
-
-    &:after {
-      transform-origin: center;
-    }
-
-    &.collapsed {
-      &:after {
-        transform: rotate(90deg);
-
-      }
-
-      &:before {
-        transform: rotate(180deg);
-      }
-    }
+	height: 400px;
+	float: left;
+	margin-top: 30px;
+	.inner-pad {
+		padding-right: 30px;
+	}
+	.news-item {
+		width: 100%;
+		float: left;
+		margin-bottom: 20px;
+	}
+	.news-title {
+		margin: 0 0 3px;
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 1.3;
+	}
+	.excerpt {
+		font-size: 13px;
+		line-height: 1.4;
+	}
+	.excerpt p {
+		margin-top: 0;
+		margin-bottom: 0;
+		line-height: 1.4;
+	}
 }

@@ -1,7 +1,9 @@
 .main-navigation {
 	width: 100%;
+	height: 55px;
 	@media screen and (min-width: $tabwidth) {
-		width: 70%;
+		width: 65%;
+		height: auto;
 		float: right;
 		padding: 20px 0;
 	}
@@ -16,7 +18,39 @@
 	a {
 		cursor: pointer;
 		text-decoration: none;
+	}
+	.main-menu-wrapper {
+		position: absolute;
+		top: 55px;
+		width: 100%;
+		background: transparent;
+		padding: 0 0;
+		height: 0;
+		max-height: 0;
+		overflow: hidden;
+		visibility: hidden;
+		opacity: 0;
+		padding: 0 10px;
 		@include transition(all ease-out .3s);
+		@media screen and (min-width: $tabwidth) {
+			position: static;
+			padding: 0 110px 0 0;
+			background: transparent;
+			height: auto;
+			max-height: 80px;
+			overflow: auto;
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	&.open-menu .main-menu-wrapper {
+		background: $color-red;
+		padding: 40px 10px 20px;
+		height: auto;
+		max-height: 500px;
+		overflow: auto;
+		visibility: visible;
+		opacity: 1;
 	}
 	.menu {
 		display: block;
@@ -38,18 +72,133 @@
 		}
 	}
 	.menu > li > a {
+		display: block;
+		padding: 8px 10px;
+		font-size: 18px;
 		@media screen and (min-width: $tabwidth) {
 			padding: 5px 10px;
+			font-size: 14px;
+		}
+		span {
+			display: inline-block;
+			position: relative;
+			&:after {
+				content:"";
+				display: block;
+				width: 100%;
+				height: 2px;
+				background: transparent;
+				position: absolute;
+				bottom: -4px;
+				left: 0;
+			}
 		}
 	}
 	.menu li ul {
 		display: none;
 	}
+	.menu > li:hover > a {
+		opacity: 0.4;
+	}
+	.menu li.current_page_item:hover > a {
+		opacity: 1;
+	}
+	.menu li.current_page_item > a span:after {
+		background: $color-navy;
+		@media screen and (min-width: $tabwidth) {
+			background: $color-red;
+		}
+	}
+}
+
+.header-button {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 60px;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	background: $color-green;
+	width: 85px;
+	height: 100%;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.3;
+	text-transform: uppercase;
+	padding: 0 10px;
+	@media screen and (min-width: $tabwidth) {
+		width: 100px;
+		right: 0;
+	}
+	span {
+		display: block;
+		width: 100%;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+	}
+	&:hover {
+		color: #FFF;
+		background: #10aa7c;
+	}
 }
 
 .menu-toggle {
 	display: block;
+	cursor: pointer;
+	width: 60px;
+	height: 100%;
+	background: $color-red;
+	color: #FFF;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10;
+	text-indent: -999em;
 	@media screen and (min-width: $tabwidth) {
 		display: none;
+	}
+	span {
+		cursor: pointer;
+		display: block;
+		width: 35px;
+    	height: 35px;
+    	position: absolute;
+	    top: 11px;
+		left: 12px;
+    	i, i:before, i:after {
+    		display: block;
+    		width: 100%;
+    		height: 3px;
+    		background: #FFF;
+    		position: absolute;
+    		@include transition(all ease-out .3s);
+    	}
+    	i {
+    		top: 16px;
+    	}
+    	i:before, i:after {
+    		content:"";
+    	}
+    	i:before {
+    		top: -10px;
+    	}
+    	i:after {
+    		top: 10px;
+    	}
+	}
+	&.open {
+		i {
+			background: transparent;
+		}
+		i:before {
+			transform: translateY(10px) rotate(45deg);
+		}
+		i:after {
+			transform: translateY(-10px) rotate(-45deg);
+		}
 	}
 }
