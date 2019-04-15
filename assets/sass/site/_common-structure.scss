@@ -104,6 +104,32 @@ a {
 }
 
 .site-footer {
-	width: 100%;
-	clear: both;
+	background: $color-navy;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: #bbbfc8;
+		font-size: 13px;
+		line-height: 1.2;
+    	padding: 2px 20px;
+		&:hover {
+			color: #FFF;
+		}
+	}
+}
+.footer-menu {
+	display: inline-block;
+	margin: 0 0;
+	padding: 0 0;
+	list-style: none;
+	li {
+		display: inline-block;
+	}
+	a {
+		border-left: 1px solid #bbbfc8;
+	}
 }

@@ -111,6 +111,20 @@
 	}
 }
 
+.main-menu-wrapper.desktop {
+	display: none;
+	@media screen and (min-width: $tabwidth) {
+		display: block;
+	}
+}
+
+.main-menu-wrapper.mobile {
+	display: block;
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+}
+
 .header-button {
 	display: inline-block;
 	position: absolute;
