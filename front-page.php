@@ -40,36 +40,34 @@ get_header();
 		<?php 
 		$storage_section_title = get_field('storage_section_title'); 
 		$storage_section_text = get_field('storage_section_text'); 
-		$storage_column_1 = get_field('storage_column_1'); 
-		$storage_column_2 = get_field('storage_column_2'); 
+		$storage_text_bottom = get_field('storage_text_bottom'); 
 		$storage_map_icon = get_field('storage_map_icon'); 
 		$storage_map_url = get_field('storage_map_url'); 
 		?>
 
 		<section class="section section-home-bottom clear">
 			<div class="wrapper clear">
-				<div class="noflexrow">
+				<div class="flexrow">
 					<div class="flexcol section-home-storage">
-						<?php if ($storage_section_title) { ?>
-							<h3 class="section-title text-center"><?php echo $storage_section_title ?></h3>
-						<?php } ?>
+						<div class="flexpad clear">
+							<?php if ($storage_section_title) { ?>
+								<h3 class="section-title text-center"><?php echo $storage_section_title ?></h3>
+							<?php } ?>
 
-						<?php if ($storage_section_text) { ?>
-							<div class="section-textwrap"><?php echo $storage_section_text ?></div>
-						<?php } ?>
+							<?php if ($storage_section_text) { ?>
+								<div class="section-textwrap"><?php echo $storage_section_text ?></div>
+							<?php } ?>
 
-						<div class="columnswrap clear">
-							<div class="storage-column col1">
-								<?php echo $storage_column_1 ?>
+							<div class="columnswrap clear">
+								<div class="storage-column col1">
+									<?php echo $storage_text_bottom ?>
+								</div>
+								<div class="storage-column-map">
+									<?php if ($storage_map_icon && $storage_map_url ) { ?>
+									<a class="mapIcon" href="<?php echo $storage_map_url ?>" target="_blank"><img src="<?php echo $storage_map_icon['url'] ?>" alt="" /></a>	
+									<?php } ?>
+								</div>	
 							</div>
-							<div class="storage-column col2">
-								<?php echo $storage_column_2 ?>
-							</div>	
-							<div class="storage-column-map">
-								<?php if ($storage_map_icon && $storage_map_url ) { ?>
-								<a class="mapIcon" href="<?php echo $storage_map_url ?>" target="_blank"><img src="<?php echo $storage_map_icon['url'] ?>" alt="" /></a>	
-								<?php } ?>
-							</div>	
 						</div>
 					</div>
 
@@ -77,8 +75,9 @@ get_header();
 						<div class="inside clear">
 							<div class="titlediv">
 								<h3 class="section-title text-center">News</h3>
-								<?php get_template_part('template-parts/home-latest-news'); ?>
 							</div>
+							<?php get_template_part('template-parts/home-latest-news'); ?>
+							<div id="news-overlay" class="overlay"></div>
 						</div>
 					</div>
 				</div>

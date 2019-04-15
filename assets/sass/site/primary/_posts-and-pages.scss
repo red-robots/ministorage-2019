@@ -339,7 +339,7 @@
 		@media screen and (min-width: $tabwidth) {
 			&:after {
 				content:"";
-				display: block;
+				display: none;
 				width: 36%;
 				height: 100%;
 				background: $color-light-grey;
@@ -357,10 +357,19 @@
 
 .section-home-storage {
 	padding-top: 50px;
-	padding-bottom: 40px;
+	padding-bottom: 0;
 	@media screen and (min-width: $tabwidth) {
-		width: 60%;
+		width: 64%;
 		float: left;
+	}
+	.flexpad {
+		padding-right: 0;
+		@media screen and (min-width: $tabwidth) {
+			padding-right: 30px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			padding-right: 50px;
+		}
 	}
 	.section-title {
 		text-transform: uppercase;
@@ -374,15 +383,21 @@
 	.section-textwrap {
 		margin-bottom: 30px;
 	}
+	.columnswrap {
+		padding-bottom: 20px;
+	}
 	.storage-column {
 		@media screen and (min-width: $tabwidth) {
-			width: 41%;
+			width: 80%;
 			float: left;
 		}
 		h3 {
 			margin: 0 0 10px;
 			font-size: 20px;
 			font-weight: 600;
+		}
+		h3.location-title {
+			text-transform: uppercase;
 		}
 		ul {
 			margin: 0 0;
@@ -405,12 +420,23 @@
 				}
 			}
 		}
+		.location-column {
+			margin-bottom: 30px;
+			text-align: center;
+			@media screen and (min-width: $tabwidth) {
+				width: 50%;
+				float: left;
+				margin-bottom: 0;
+				text-align: left;
+			}
+		}
 	}
 	.storage-column-map {
-		text-align: right;
+		text-align: center;
 		@media screen and (min-width: $tabwidth) {
 			width: 18%;
 			float: right;
+			text-align: right;
 		}
 		a {
 			text-decoration: none;
@@ -418,22 +444,31 @@
 		}
 		img {
 			height: auto;
-			width: 110px;
+			width: 125px;
+			@media screen and (min-width: $tabwidth) {
+				width: 110px;
+			}
 		}
 	}
 }
 .section-home-news {
-	background: $color-light-grey;
 	@media screen and (min-width: $tabwidth) {
 		width: 36%;
 		float: right;
 	}
 	.inside {
+		position: relative;
+		background: $color-light-grey;
+		padding-bottom: 30px;
+	}
+
+	.titlediv {
 		padding: 30px 20px 10px;
 		@media screen and (min-width: $tabwidth) {
 			padding: 50px 40px 20px;
 		}
 	}
+
 	.section-title {
 		margin: 0 0;
 		padding: 3px 5px 1px;
@@ -444,27 +479,55 @@
 		color: #FFF;
 		background: $color-navy;
 	}
+
+	.overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+		width: 100%;
+		height: 10%;
+		background: -moz-linear-gradient(top, rgba(235,235,235,0) 0%, rgba(209,209,209,0.41) 63%, rgba(209,209,209,0.65) 100%);
+		background: -webkit-linear-gradient(top, rgba(235,235,235,0) 0%,rgba(209,209,209,0.41) 63%,rgba(209,209,209,0.65) 100%);
+		background: linear-gradient(to bottom, rgba(235,235,235,0) 0%,rgba(209,209,209,0.41) 63%,rgba(209,209,209,0.65) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ebebeb', endColorstr='#a6d1d1d1',GradientType=0 );
+	}
 }
 .home-latest-news {
 	overflow-x: hidden;
 	overflow-y: scroll;
 	width: 100%;
-	height: 400px;
+	height: 430px;
 	float: left;
-	margin-top: 30px;
+	position: relative;
+	padding-bottom: 30px;
 	.inner-pad {
-		padding-right: 30px;
+		position: relative;
+		padding: 0 20px;
+		@media screen and (min-width: $tabwidth) {
+			padding: 0 40px;
+		}
 	}
 	.news-item {
 		width: 100%;
 		float: left;
-		margin-bottom: 20px;
+		margin-top: 25px;
+	}
+	.news-item:first-child {
+		margin-top: 0;
 	}
 	.news-title {
 		margin: 0 0 3px;
 		font-weight: 600;
 		font-size: 15px;
 		line-height: 1.3;
+		text-transform: uppercase;
+		a {
+			text-transform: uppercase;
+			text-decoration: none;
+			outline: none;
+			color: $color-navy;
+		}
 	}
 	.excerpt {
 		font-size: 13px;
@@ -475,4 +538,30 @@
 		margin-bottom: 0;
 		line-height: 1.4;
 	}
+	.button a {
+		text-decoration: none;
+		color: $color-red;
+		font-size: 12px;
+		line-height: 1.2;
+		display: inline-block;
+		border-bottom: 1px solid $color-red;
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}
+
+.div-custom-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+.div-custom-scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    background-color: #dedbdb;
+}
+ 
+.div-custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #16325b;
+  outline: none;
+  border: 2px solid #dedbdb;
 }

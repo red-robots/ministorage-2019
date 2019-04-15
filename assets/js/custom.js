@@ -58,4 +58,8 @@ jQuery(document).ready(function ($) {
 		}
 	);
 
+	$(document).on("click","#news-overlay",function(){
+		$(this).fadeOut();
+	});
+
 });// END #####################################    END

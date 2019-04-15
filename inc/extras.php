@@ -433,3 +433,60 @@ function trim_excerpt($text) {
     return $text.'...';
 }
 add_filter('get_the_excerpt', 'trim_excerpt');
+
+function location_list_func( $atts ) {
+    $atts = shortcode_atts( array(
+        'state' => '',
+        'title' => '',
+        'exclude'=> '',
+    ), $atts, 'store_locations' );
+
+    $title = $atts['title'];
+    $state = $atts['state'];
+    $exclude_ids = $atts['exclude'];
+    $exclude = ($exclude_ids) ? explode(',',$exclude_ids) : null;
+    $lists = get_state_lists($state,$exclude);
+    $output = '';
+    if($lists) {
+        $output .= '<div class="location-column">';
+        if( $title ) {
+            $output .= '<h3 class="location-title">'.$title.'</h3>';
+        } else {
+            $output .= '<h3 class="location-title">'.$state.'</h3>';
+        }
+        $output .= '<ul class="location-list">';
+        foreach ($lists as $row) {
+            $post_id = $row->ID;
+            $pagelink = get_permalink($post_id);
+            $output .= '<li><a href="'.$pagelink.'">'.$row->post_title.'</a></li>';
+        }
+        $output .= '</ul></div>';
+    }
+    return $output;
+}
+add_shortcode( 'store_locations', 'location_list_func' );
+
+
+function get_state_lists($state,$exclude=null) {
+    if($state) {
+        $post_type = 'location';
+        $taxonomy = 'location_states';
+        $args = array(
+            'posts_per_page'   => -1,
+            'post_type'        => $post_type,
+            'post_status'      => 'publish',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => $taxonomy,
+                    'field'    => 'name',
+                    'terms'    => $state
+                ),
+            ),
+        );
+        if( $exclude && is_array($exclude) ) {
+            $args['post__not_in'] = $exclude;
+        }
+        $items = get_posts($args);
+        return ($items) ? $items : '';
+    }
+}
