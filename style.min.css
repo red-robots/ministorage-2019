@@ -1835,6 +1835,7 @@ a{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .footer-menu{display:inline-block;margin:0;padding:0;list-style:none}
 .footer-menu li{display:inline-block}
 .footer-menu a{border-left:1px solid #bbbfc8}
+.site{overflow:hidden}
 .default-template{padding-top:20px;min-height:25em}
 .default-template .entry-title{margin-top:0}
 .default-template .site-main{padding-bottom:40px}
