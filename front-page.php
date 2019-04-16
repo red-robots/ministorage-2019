@@ -77,7 +77,7 @@ get_header();
 								<h3 class="section-title text-center">News</h3>
 							</div>
 							<?php get_template_part('template-parts/home-latest-news'); ?>
-							<div id="news-overlay" class="overlay"></div>
+							<div class="overlay news-overlay"></div>
 						</div>
 					</div>
 				</div>
