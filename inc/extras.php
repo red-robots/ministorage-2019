@@ -299,10 +299,10 @@ function shortenText($string, $limit, $break=".", $pad="...") {
 }
 
 /* Fixed Gravity Form Conflict Js */
-add_filter("gform_init_scripts_footer", "init_scripts");
-function init_scripts() {
-    return true;
-}
+// add_filter("gform_init_scripts_footer", "init_scripts");
+// function init_scripts() {
+//     return true;
+// }
 
 function get_page_id_by_template($fileName) {
     $page_id = 0;

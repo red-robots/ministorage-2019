@@ -16,6 +16,8 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	-webkit-box-sizing: border-box;
 }
 a {
+	font-weight: normal;
+	text-shadow: none;
 	@include transition(all ease-out .3s);
 }
 h1.entry-title {

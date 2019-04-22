@@ -74,9 +74,10 @@
                     $rowClass = ( $ctr % 2 ) ? 'odd':'even';
                     ?>
                     <tr id="location<?php echo $ctr?>" class="row-<?php echo $ctr?> <?php echo $rowClass ?>">
-                    <?php $col=1; foreach ($headings as $k=>$v) {
+                    <?php $col=1; foreach ($headings as $k=>$colname) {
                         $is_available = ( isset($contents[$k]) && $contents[$k] ) ? true : false; ?>
                         <td class="bcol<?php echo $col?>">
+                            <b class="ui-table-cell-label"><?php echo $colname ?></b>
                             <?php if($col==1) { ?>  
                                 <a href="<?php echo $location_link; ?>"><?php echo $contents[$k]; ?></a>
                             <?php } else { ?>
