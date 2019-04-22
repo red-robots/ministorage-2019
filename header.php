@@ -16,11 +16,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php
+global $post;
+$pageID = ( isset($post->ID) ) ? $post->ID : 0;
+if($pageID==9) { /* Features and Amenities Page ID */ ?> 
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/css/jquery.mobile.min.css">
+<?php } ?>
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
 <?php wp_head(); ?>
 <?php $analytics = get_field('google_analytics','option'); ?>
 <?php if ($analytics) { ?><?php echo $analytics ?><?php } ?>
-
 </head>
 
 <body <?php body_class(); ?>>

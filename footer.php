@@ -15,5 +15,17 @@
 
 <?php wp_footer(); ?>
 
+<?php
+global $post;
+$pageID = ( isset($post->ID) ) ? $post->ID : 0;
+if($pageID==9) { /* Features and Amenities Page ID */ ?> 
+	<script type="text/javascript" src="<?php echo get_bloginfo('template_url') ?>/assets/js/vendors/jquery.mobile.min.js"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function ($) {
+		
+	});
+	</script>
+<?php } ?>
+
 </body>
 </html>

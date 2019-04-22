@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: News
+ * Template Name: Features & Amenities
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 
-			<?php get_template_part( 'template-parts/content', 'news-list' ); ?>
+			<?php get_template_part( 'template-parts/content', 'amenities' ); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
