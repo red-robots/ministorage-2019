@@ -1664,24 +1664,32 @@ a:hover,a:active{outline:0}
 .main-navigation li{position:relative}
 .main-navigation a{color:#FFF;cursor:pointer;text-decoration:none}
 .main-navigation .main-menu-wrapper{position:absolute;top:55px;width:100%;background:transparent;padding:0;height:0;max-height:0;overflow:hidden;visibility:hidden;opacity:0;padding:0 10px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
-@media screen and (min-width:600px){.main-navigation .main-menu-wrapper{position:static;padding:0 110px 0 0;background:transparent;height:auto;max-height:80px;overflow:auto;visibility:visible;opacity:1}
+@media screen and (min-width:600px){.main-navigation .main-menu-wrapper{position:static;padding:0 110px 0 0;background:transparent;height:auto;max-height:80px;overflow:visible;visibility:visible;opacity:1}
 }.main-navigation.open-menu .main-menu-wrapper{background:#ed293b;padding:40px 10px 20px;height:auto;max-height:500px;overflow:auto;visibility:visible;opacity:1}
-.main-navigation .menu{display:block}
+@media screen and (min-width:600px){.main-navigation.open-menu .main-menu-wrapper{overflow:visible}
+}.main-navigation .menu{display:block}
 @media screen and (min-width:600px){.main-navigation .menu{display:inline-block;float:right}
 }.main-navigation .menu a{color:#FFF;font-size:14px;line-height:1.2}
 .main-navigation .menu>li{display:block}
 @media screen and (min-width:600px){.main-navigation .menu>li{display:inline-block;float:left}
-}.main-navigation .menu>li>a{display:block;padding:8px 10px;font-size:18px}
+}.main-navigation .menu>li>a{display:block;padding:8px 10px;font-size:18px;position:relative;z-index:5}
 @media screen and (min-width:600px){.main-navigation .menu>li>a{padding:5px 10px;font-size:14px}
 }.main-navigation .menu>li>a span{display:inline-block;position:relative}
 .main-navigation .menu>li>a span:after{content:"";display:block;width:100%;height:2px;background:#ed293b;position:absolute;bottom:-4px;left:0;-webkit-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);visibility:hidden;opacity:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
-.main-navigation .menu li ul{display:none}
-.main-navigation .menu>li:hover>a span:after{-webkit-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);visibility:visible;opacity:1}
+@media screen and (min-width:600px){.main-navigation .menu li ul{width:200px;height:0;max-height:0;opacity:0;visibility:hidden;overflow:hidden;position:absolute;margin-top:-8px;background:#ed293b;padding-top:5px;padding-bottom:8px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.main-navigation .menu li ul a{display:block;background:#ed293b;color:#FFF;padding:8px 10px}
+.main-navigation .menu li ul a span{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.main-navigation .menu li ul li.current_page_item:hover>a,.main-navigation .menu li ul li.current_page_item>a,.main-navigation .menu li ul>li:hover>a{background:#ed293b;color:#FFF}
+.main-navigation .menu li ul li.current_page_item:hover>a span,.main-navigation .menu li ul li.current_page_item>a span,.main-navigation .menu li ul>li:hover>a span{opacity:.5}
+.main-navigation .menu li ul ul{left:200px}
+}.main-navigation .menu>li:hover>a span:after{-webkit-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);visibility:visible;opacity:1}
 .main-navigation .menu li.current_page_item:hover>a{opacity:1}
 .main-navigation .menu li.current_page_item:hover>a,.main-navigation .menu li.current_page_item>a{background:#16325b}
 @media screen and (min-width:600px){.main-navigation .menu li.current_page_item:hover>a,.main-navigation .menu li.current_page_item>a{background:transparent}
 }.main-navigation .menu li.current_page_item>a span:after{background:#16325b;visibility:visible;opacity:1}
 @media screen and (min-width:600px){.main-navigation .menu li.current_page_item>a span:after{background:#ed293b}
+}@media screen and (min-width:600px){.main-navigation .menu li:hover>ul{height:auto;max-height:400px;opacity:1;visibility:visible;margin-top:-3px;overflow:visible}
+.main-navigation .menu li:hover>ul>li:hover>ul{margin-top:0 !important;top:-5px}
 }.main-menu-wrapper.desktop{display:none}
 @media screen and (min-width:600px){.main-menu-wrapper.desktop{display:block}
 }.main-menu-wrapper.mobile{display:block}

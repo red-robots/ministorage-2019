@@ -39,7 +39,7 @@
 			background: transparent;
 			height: auto;
 			max-height: 80px;
-			overflow: auto;
+			overflow: visible;
 			visibility: visible;
 			opacity: 1;
 		}
@@ -52,6 +52,9 @@
 		overflow: auto;
 		visibility: visible;
 		opacity: 1;
+		@media screen and (min-width: $tabwidth) {
+			overflow: visible;
+		}
 	}
 	.menu {
 		display: block;
@@ -76,6 +79,8 @@
 		display: block;
 		padding: 8px 10px;
 		font-size: 18px;
+		position: relative;
+		z-index: 5;
 		@media screen and (min-width: $tabwidth) {
 			padding: 5px 10px;
 			font-size: 14px;
@@ -100,7 +105,41 @@
 		}
 	}
 	.menu li ul {
-		display: none;
+		@media screen and (min-width: $tabwidth) {
+			width: 200px;
+			height: 0;
+			max-height: 0;
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+			position: absolute;
+			margin-top: -8px;
+			background: $color-red;
+			padding-top: 5px;
+			padding-bottom: 8px;
+			@include transition(all ease-out .3s);
+			a {
+				display: block;
+				background: $color-red;
+				color: #FFF;
+				padding: 8px 10px;
+				span {
+					@include transition(all ease-out .3s);
+				}
+			}
+			li.current_page_item:hover > a,
+			li.current_page_item > a,
+			> li:hover > a {
+				background: $color-red;
+				color: #FFF;
+				span {
+					opacity: 0.5;
+				}
+			}
+			ul {
+				left: 200px;
+			}
+		}
 	}
 	.menu > li:hover > a span:after {
 		transform: scaleX(1);
@@ -123,6 +162,21 @@
 		opacity: 1;
 		@media screen and (min-width: $tabwidth) {
 			background: $color-red;
+		}
+	}
+
+	@media screen and (min-width: $tabwidth) {
+		.menu li:hover > ul {
+			height: auto;
+			max-height: 400px;
+			opacity: 1;
+			visibility: visible;
+			margin-top: -3px;
+			overflow: visible;
+		}
+		.menu li:hover > ul > li:hover > ul {
+			margin-top: 0!important;
+			top: -5px;
 		}
 	}
 }
