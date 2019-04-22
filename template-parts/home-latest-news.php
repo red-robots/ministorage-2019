@@ -1,6 +1,7 @@
 <?php
+$perpage = 3;
 $args = array(
-	'posts_per_page'   => 15,
+	'posts_per_page'   => $perpage,
 	'orderby'          => 'date',
 	'order'            => 'DESC',
 	'post_type'        => 'post',
@@ -8,8 +9,8 @@ $args = array(
 );
 $news = new WP_Query($args);
 if ( $news->have_posts() ) {  ?>
-<div class="home-latest-news clear div-custom-scroll">
-	<div class="inner-pad clear">
+<div class="home-latest-news clear"> <?php /* add class .div-custom-scroll to show styled scroller */ ?>
+	<div class="inner-pad-autoheight clear">
 		<?php while ( $news->have_posts() ) : $news->the_post();  ?>
 			<div class="news-item">
 				<h3 class="news-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>

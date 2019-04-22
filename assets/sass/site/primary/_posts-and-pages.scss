@@ -298,6 +298,14 @@
 	.wrapper {
 		overflow: hidden;
 	}
+	.flexrow {
+		margin-left: 0; 
+		margin-right: 0; 
+		@media screen and (min-width: $tabwidth) {
+			margin-left: -15px; 
+			margin-right: -15px;
+		}
+	}
 }
 .home-icons-features {
 	text-align: center;
@@ -479,6 +487,10 @@
 		position: relative;
 		background: $color-light-grey;
 		padding-bottom: 30px;
+		margin-bottom: 60px;
+		@media screen and (min-width: $tabwidth) {
+			margin-bottom: 0;
+		}
 	}
 
 	.titlediv {
@@ -501,7 +513,7 @@
 
 	.overlay {
 		position: absolute;
-		bottom: -15px;
+		bottom: 0;
 		left: 0;
 		z-index: 5;
 		width: 100%;
@@ -510,18 +522,28 @@
 		background: -webkit-linear-gradient(top, rgba(235,235,235,0) 0%,rgba(209,209,209,0.41) 63%,rgba(209,209,209,0.65) 100%);
 		background: linear-gradient(to bottom, rgba(235,235,235,0) 0%,rgba(209,209,209,0.41) 63%,rgba(209,209,209,0.65) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ebebeb', endColorstr='#a6d1d1d1',GradientType=0 );
+		@media screen and (min-width: $tabwidth) {
+			bottom: -10px;
+		}
 	}
 }
 .home-latest-news {
 	overflow-x: hidden;
 	overflow-y: scroll;
 	width: 100%;
-	height: 450px;
+	/* height: 450px; */
 	float: left;
 	position: relative;
-	padding-bottom: 30px;
+	/* padding-bottom: 30px; */
 	box-sizing: border-box;
 	.inner-pad {
+		position: relative;
+		padding: 0 20px;
+		@media screen and (min-width: $tabwidth) {
+			padding: 0 40px;
+		}
+	}
+	.inner-pad-autoheight {
 		position: relative;
 		padding: 0 20px;
 		@media screen and (min-width: $tabwidth) {
