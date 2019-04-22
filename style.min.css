@@ -1966,7 +1966,7 @@ h1.entry-title{margin-top:0}
 }@media screen and (min-width:900px){.news-listing .flexcol{width:25%}
 }.news-listing .flexcol .inside{box-sizing:border-box;height:100%;padding:15px;border:1px solid #96a7c1}
 .news-listing .post-title{font-size:16px;line-height:1.3;text-transform:uppercase;margin:0 0 8px;color:#16325b}
-.news-listing .post-title a{text-decoration:none;color:#16325b}
+.news-listing .post-title a{text-decoration:none;color:#16325b;font-weight:600}
 .news-listing .post-excerpt{font-size:13px;line-height:1.5}
 .news-listing .post-link a{display:inline-block;font-size:13px;text-decoration:underline}
 .pagination{margin-top:20px}
