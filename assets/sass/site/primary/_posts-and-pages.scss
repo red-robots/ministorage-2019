@@ -790,12 +790,14 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 	.gfield_captcha_input_container.math_medium {
 		width: 100%;
 		@media screen and (min-width: $tabwidth) {
-			width: 50%;
 			float: left;
-			padding-right: 10px;
 		}
 		input {
 			width: 100%;
+			@media screen and (min-width: $tabwidth) {
+				width: 48.9%;
+				float: left;
+			}
 		}
 	}
 }
