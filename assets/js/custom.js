@@ -172,4 +172,27 @@ jQuery(document).ready(function ($) {
 	});
 
 
+	$(".js-select").select2({
+		placeholder: "Select...",
+	    allowClear: true
+	}).on("select2:unselecting", function(e) {
+	    $(this).data('state', 'unselected');
+	    $('input.allow-reset').val("");
+	}).on("select2:open", function(e) {
+	    if ($(this).data('state') === 'unselected') {
+	        $(this).removeData('state'); 
+	        var self = $(this);
+	        setTimeout(function() {
+	            self.select2('close');
+	        }, 1);
+	    }    
+	});
+
+	$(document).on("change","select#location_options",function(){
+		var selected = $(this).val();
+		if(selected) {
+			window.location.href = selected;
+		}
+	});
+
 });// END #####################################    END

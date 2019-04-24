@@ -9,11 +9,21 @@
 
 get_header(); ?>
 
-	<div id="primary" class="full-content-area wrapper">
+	<div id="primary" class="full-content-area wrapper single-location-page">
 		<main id="main" class="site-main clear" role="main">
 
-		<?php while ( have_posts() ) : the_post();
-			get_template_part( 'template-parts/content', get_post_format() ); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+
+			<header class="entry-header">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<div class="location-list-select">
+					<?php get_template_part("template-parts/location-dropdown"); ?>
+				</div>
+			</header>
+
+			<?php if ( get_the_content() ) { ?>
+			<div class="entry-content"><?php the_content(); ?></div>	
+			<?php } ?>
 
 			<?php  
 				$tablabels = array(
@@ -257,11 +267,14 @@ get_header(); ?>
 				<div class="swiper-container clear">
 			        <div class="swipe-projects swiper-wrapper">
 			            <?php $j=1; foreach($galleries as $g) {  
-							$image_url = $g['url']; 
+							//$image_url = $g['url']; 
+							$image_url = $g['sizes']['large'];
 							$image_title = $g['title']; ?>
 							<div class="slick-slide swipeImg<?php echo ($j==1) ? ' slick-current slick-active slick-center':''?>">
-								<a href="<?php echo $image_url; ?>" class="imagediv popup" style="background-image:url('<?php echo $image_url; ?>')"></a>
-                 				<a href="<?php echo $image_url; ?>" class="popup actual-image"><img src="<?php echo $image_url; ?>" alt="<?php echo $image_title; ?>" /></a>
+								<a rel="gal" href="<?php echo $image_url; ?>" class="popup">
+									<span class="imagediv" style="background-image:url('<?php echo $g['sizes']['medium_large']; ?>')"></span>
+									<img class="image" src="<?php echo $image_url; ?>" alt="<?php echo $image_title; ?>" />
+								</a>
 							</div>
 			            <?php $j++; } ?>
 			        </div>
