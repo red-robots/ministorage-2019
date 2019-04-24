@@ -172,7 +172,7 @@ jQuery(document).ready(function ($) {
 	});
 
 
-	$(".js-select").select2({
+	$(".js-select,select.gfield_select").select2({
 		placeholder: "Select...",
 	    allowClear: true
 	}).on("select2:unselecting", function(e) {
