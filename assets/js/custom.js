@@ -21,10 +21,10 @@ jQuery(document).ready(function ($) {
 	
 
 	/*== Colorbox ==*/
-	$('a.gallery').colorbox({
+	$('a.gallery, a.popup').colorbox({
 		rel:'gal',
-		width: '80%', 
-		height: '80%'
+		maxWidth: '95%',
+		maxHeight: '90%'
 	});
 
 	/*== Equal Heights Divs ==*/
@@ -106,6 +106,69 @@ jQuery(document).ready(function ($) {
 			var target = $('.link_'+location);
 			target.trigger('click');
 		}
+	});
+
+	$(document).on("click","li.tabName",function(e){
+		e.preventDefault();
+		var tabname = $(this).attr('data-panel');
+		if( $(tabname).length ) {
+			$(".tabswrapper *").removeClass('active');
+			$("[data-panel="+tabname+"]").addClass('active');
+			$(tabname).addClass('active');
+		}
+	});
+
+	$(document).on("click","h2.tabName",function(e){
+		var tabname = $(this).attr('data-panel');
+		if( $(tabname).length ) {
+			var is_active = ( $('div'+tabname).hasClass('active') ) ? true : false; 
+			if( is_active ) {
+				$(tabname).removeClass('active');
+				$("[data-panel="+tabname+"]").removeClass('active');
+			} else {
+				$('.tab-content').removeClass("active");
+				$("[data-panel="+tabname+"]").addClass('active');
+				$(tabname).addClass('active');
+			}
+		}
+	});
+
+
+	$('.swipe-projects').slick({
+		dots: true,
+		infinite: true,
+		autoplay: true,
+  		autoplaySpeed: 2000,
+		speed: 300,
+		slidesToShow: 4,
+		slidesToScroll: 4,
+		centerMode: false,
+  		variableWidth: false,
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				infinite: true,
+				dots: true
+				}
+			},
+				{
+				breakpoint: 600,
+				settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+				}
+			},
+				{
+				breakpoint: 480,
+				settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+				}
+			}
+		]
 	});
 
 
