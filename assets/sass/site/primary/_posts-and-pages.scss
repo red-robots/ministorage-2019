@@ -738,6 +738,7 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 		font-size: 14px;
 	}
 	ul.gform_fields li.gfield {
+		position: relative;
 		select {
 			height: 36px;
 			line-height: 36px;
@@ -784,6 +785,17 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 		@include transition(all ease-out .3s);
 		&:hover {
 			background: #2d9e57;
+		}
+	}
+	.gfield_captcha_input_container.math_medium {
+		width: 100%;
+		@media screen and (min-width: $tabwidth) {
+			width: 50%;
+			float: left;
+			padding-right: 10px;
+		}
+		input {
+			width: 100%;
 		}
 	}
 }
@@ -1524,13 +1536,13 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 .select2-container {
 	width: 100%;
 	.select2-selection--single {
-		height: 35px;
+		height: 36px;
 		border-radius: 0px;
 		border:1px solid #CCC;
 	}
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-	line-height: 35px;
+	line-height: 36px;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow {
 	height: 99%;
