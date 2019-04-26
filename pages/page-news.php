@@ -4,16 +4,28 @@
  */
 
 get_header(); ?>
-<div id="primary" class="full-content-area wrapper">
+<div id="primary" class="full-content-area clear">
 		<main id="main" class="site-main clear" role="main">
 
-			<?php
-			while ( have_posts() ) : the_post();
-				if( get_the_content() ) {
-					get_template_part( 'template-parts/content', 'page' );
-				}
-			endwhile; // End of the loop.
-			?>
+			<div class="wrapper">
+			<?php while ( have_posts() ) : the_post(); ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<header class="entry-header">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
+
+					<div class="entry-content">
+						<?php
+							the_content();
+							$readmore = get_field('read_more_link');
+						?>
+						<?php if ($readmore) { ?>
+						<div class="buttondiv"><a class="mainbtn" href="<?php echo $readmore ?>">Read More</a></div>	
+						<?php } ?>
+					</div><!-- .entry-content -->
+				</article>
+			<?php endwhile; ?>
+			</div>
 
 			<?php get_template_part( 'template-parts/content', 'news-list' ); ?>
 

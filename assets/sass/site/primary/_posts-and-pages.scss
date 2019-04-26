@@ -648,7 +648,9 @@
 		}
 	}
 }
-
+.page-template-page-news {
+	background: #EFEFEF;
+}
 .news-listing {
 	margin-top: 20px;
 	.flexcol {
@@ -665,7 +667,7 @@
 			box-sizing: border-box;
 			height: 100%;
 			padding: 15px;
-			border: 1px solid #96a7c1;
+			background: #FFF;
 		}
 	}
 	.post-title {
@@ -683,6 +685,9 @@
 	.post-excerpt {
 		font-size: 13px;
 		line-height: 1.5;
+	}
+	.post-link {
+		margin-top: 5px;
 	}
 	.post-link a {
 		display: inline-block;
@@ -1552,4 +1557,115 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
 	background-color: $color-green;
 }
+.entry-content {
+	margin-bottom: 30px;
+	@media screen and (min-width: $tabwidth) {
+		margin-bottom: 60px;
+	}
+	ul {
+		margin-left: 0;
+	}
+}
+.entry-header {
+	margin-bottom: 30px;
+}
+.page-with-sidebar {
+	.content-area {
+		width: 100%;
+		@media screen and (min-width: $tabwidth) {
+			width: 66%;
+			float: left;
+		}
+	}
+	.widget-area .buttondiv {
+		margin-top: 20px;
+	}
+}
+.recent-news-posts {
+	background: $color-navy;
+	margin-bottom: 50px;
+	padding: 40px 0;
+	.flexcol {
+		padding-left: 15px;
+		padding-right: 15px;
+		@media screen and (min-width: $tabwidth) {
+			width: 33%;
+			float: left;
+		}
+	}
+	.inside {
+		background: #FFF;
+		box-shadow: 0px 0px 15px 0px rgba(0,0,0,.3);
+		padding: 20px;
+		height: 100%;
+	}
+	.post-title {
+		margin: 0 0 15px;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1.3;
+		color: $color-navy;
+		text-transform: uppercase;
+		a {
+			font-weight: 600;
+			text-decoration: none;
+			color: $color-navy;
+		}
+	}
+	.post-link {
+		margin-top: 10px;
+		a {
+			font-size: 13px;
+		}
+	}
+}
+
+.mainbtn {
+	display: inline-block;
+	text-decoration: none;
+	color: #FFF;
+	background: $color-red;
+	font-size: 13px;
+	padding: 7px 15px 6px;
+	&:hover {
+		color: #FFF;
+		opacity: .45;
+	}
+}
+body.single-post {
+	#secondary {
+		background: $color-light-grey;
+		margin-bottom: 50px;
+	}
+	.widget {
+		margin: 0 0;
+	}
+	.widget-title {
+		margin: 0 0;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1.3;
+		padding: 5px 20px;
+		background: $color-navy;
+		color: #FFF;
+	}
+	ul {
+		margin: 0 0;
+		padding: 10px 20px;
+		list-style: none;
+		li {
+			font-size: 14px;
+			padding: 3px 0;
+		}
+		a {
+			display: inline-block;
+			text-decoration: none;
+			color: $color-navy;
+			&:hover {
+				color: $color-red;
+			}
+		}
+	}
+}
+
 

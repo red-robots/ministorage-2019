@@ -127,6 +127,8 @@
 					@include transition(all ease-out .3s);
 				}
 			}
+			li.current-menu-item:hover > a,
+			li.current-menu-item > a,
 			li.current_page_item:hover > a,
 			li.current_page_item > a,
 			> li:hover > a {
@@ -141,6 +143,8 @@
 			}
 		}
 	}
+	.menu li.current-menu-item > a span:after,
+	.menu li.current_page_item > a span:after,
 	.menu > li:hover > a span:after {
 		transform: scaleX(1);
 		visibility: visible;
@@ -149,6 +153,8 @@
 	.menu li.current_page_item:hover > a {
 		opacity: 1;
 	}
+	.menu li.current-menu-item:hover > a,
+	.menu li.current-menu-item > a,
 	.menu li.current_page_item:hover > a,
 	.menu li.current_page_item > a {
 		background: $color-navy;
@@ -156,6 +162,7 @@
 			background: transparent;
 		}
 	}
+	.menu li.current-menu-item > a span:after,
 	.menu li.current_page_item > a span:after {
 		background: $color-navy;
 		visibility: visible;

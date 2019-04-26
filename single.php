@@ -7,21 +7,32 @@
  * @package ACStarter
  */
 
-get_header(); ?>
+get_header(); 
+$post_type = get_post_type(); ?>
 
 	<div id="primary" class="full-content-area wrapper">
 		<main id="main" class="site-main content-area" role="main">
 
-		<?php
-		while ( have_posts() ) : the_post();
-			get_template_part( 'template-parts/content', get_post_format() );
+			<?php while ( have_posts() ) : the_post(); ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<header class="entry-header">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
 
-		endwhile; // End of the loop.
-		?>
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div><!-- .entry-content -->
+				</article>
+			<?php endwhile; ?>
 
 		</main><!-- #main -->
 
-		<?php get_sidebar(); ?>
+		<?php 
+		if ($post_type=='post') { 
+			get_sidebar('news');
+		} else {
+			get_sidebar();
+		} ?>
 	</div><!-- #primary -->
 
 <?php

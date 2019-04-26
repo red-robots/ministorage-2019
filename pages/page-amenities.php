@@ -5,15 +5,28 @@
 
 get_header(); ?>
 <div id="primary" class="full-content-area wrapper">
-		<main id="main" class="site-main clear" role="main">
+		<main id="main" class="site-main clear page-with-sidebar" role="main">
 
-			<?php
-			while ( have_posts() ) : the_post();
-				if( get_the_content() ) {
-					get_template_part( 'template-parts/content', 'page' );
-				}
-			endwhile; // End of the loop.
-			?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<header class="entry-header">
+					<h1 class="entry-title"><?php the_title(); ?></h1>
+				</header>
+				<div class="content-area">
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div>
+				</div>
+				<div class="widget-area">
+					<?php
+					$cta_button_name = get_field('cta_button_name');  
+					$cta_button_link = get_field('cta_button_link');  
+					if($cta_button_name && $cta_button_link) {  ?>
+						<div class="buttondiv">
+							<a class="cta-btn" href="<?php echo $cta_button_link ?>"><?php echo $cta_button_name ?></a>
+						</div>
+					<?php } ?>
+				</div>
+			<?php endwhile;  ?>
 
 			<?php get_template_part( 'template-parts/content', 'amenities' ); ?>
 
