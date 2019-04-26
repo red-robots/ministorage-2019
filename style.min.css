@@ -2320,7 +2320,7 @@ body.single-post #secondary{background:#ebebeb;margin-bottom:50px}
 body.single-post .widget{margin:0}
 body.single-post .widget-title{margin:0;font-size:16px;font-weight:500;line-height:1.3;padding:5px 20px;background:#16325b;color:#FFF}
 body.single-post ul{margin:0;padding:10px 20px;list-style:none}
-body.single-post ul li{font-size:14px;padding:3px 0}
+body.single-post ul li{font-size:14px;line-height:1.3;padding:4px 0}
 body.single-post ul a{display:inline-block;text-decoration:none;color:#16325b}
 body.single-post ul a:hover{color:#ed293b}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
