@@ -2303,7 +2303,7 @@ body .gform_wrapper .gform_body .top_label div.ginput_container{margin-top:3px}
 .entry-header{margin-bottom:30px}
 .page-with-sidebar .content-area{width:100%}
 @media screen and (min-width:600px){.page-with-sidebar .content-area{width:66%;float:left}
-}.page-with-sidebar .widget-area .buttondiv{margin-top:20px}
+}.page-with-sidebar .widget-area .buttondiv{margin-top:15px}
 .recent-news-posts{background:#16325b;margin-bottom:50px;padding:40px 0}
 .recent-news-posts .flexcol{padding-left:15px;padding-right:15px}
 @media screen and (min-width:600px){.recent-news-posts .flexcol{width:33%;float:left}
@@ -2323,6 +2323,16 @@ body.single-post ul{margin:0;padding:10px 20px;list-style:none}
 body.single-post ul li{font-size:14px;line-height:1.3;padding:4px 0}
 body.single-post ul a{display:inline-block;text-decoration:none;color:#16325b}
 body.single-post ul a:hover{color:#ed293b}
+section.faqs{max-width:700px;width:100%}
+.faqrow{width:auto;overflow:hidden;margin:0 0 10px 0;border:1px solid #dfdfdf;background-color:rgba(255,255,255,0.05);box-shadow:0 0 5px 0 rgba(0,0,0,0.15);border-radius:5px}
+.question{width:100%;float:left;font-weight:bold;font-size:20px;cursor:pointer;line-height:1.3;position:relative;padding:12px 15px;box-sizing:border-box}
+.question-image.close{background-position:-15px 0}
+.answer{width:100%;float:left;font-size:16px;line-height:1.3;padding:0 40px 0;margin-bottom:10px;display:none}
+.plus-minus-toggle{cursor:pointer;height:21px;position:absolute;width:18px;right:18px;top:43%;z-index:2}
+.plus-minus-toggle:before,.plus-minus-toggle:after{background:#16325b;content:'';height:5px;left:0;position:absolute;top:0;width:21px;-webkit-transition:-webkit-transform 500ms ease;transition:-webkit-transform 500ms ease;transition:transform 500ms ease;transition:transform 500ms ease,-webkit-transform 500ms ease}
+.plus-minus-toggle:after{-webkit-transform-origin:center;-ms-transform-origin:center;transform-origin:center}
+.plus-minus-toggle.collapsed:after{-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}
+.plus-minus-toggle.collapsed:before{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

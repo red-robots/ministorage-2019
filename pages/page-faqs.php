@@ -16,14 +16,14 @@ get_header(); ?>
 			?>
 
 			<section class="faqs">
-				<?php if(have_rows('loan_faqs')): ?>
-					<?php while(have_rows('loan_faqs')): the_row();
+				<?php if(have_rows('faqs')): ?>
+					<?php while(have_rows('faqs')): the_row();
 						$question=get_sub_field('question');
 						$answer=get_sub_field('answer');
-					?>
+						?>
 							<div class="faqrow">
 								<div class="question">
-									<div class="plus-minus-toggle collapsed"></div>
+									<div class="plus-minus-toggle"></div>
 									<?php the_sub_field('question'); ?>
 								</div>
 								<div class="answer"><?php the_sub_field('answer'); ?></div>

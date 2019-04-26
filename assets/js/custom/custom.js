@@ -13,6 +13,13 @@ jQuery(document).ready(function ($) {
 		$(this).removeAttr('height').removeAttr('width').wrap( "<div class='embed-container'></div>" );
  	});
 	
+	/* FAQ dropdowns */
+	$('.question').click(function() {
+	    $(this).next('.answer').slideToggle(500);
+	    $(this).toggleClass('close');
+	    $(this).find('.plus-minus-toggle').toggleClass('collapsed');
+	    $(this).parent().toggleClass('active');
+	});
 
 	/*== Flexslider ==*/
 	$('.flexslider').flexslider({

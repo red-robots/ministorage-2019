@@ -26,6 +26,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
+	<?php if ( get_the_content() ) { ?>
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
@@ -40,6 +41,7 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+	<?php } ?>
 
 	<footer class="entry-footer">
 		<?php acstarter_entry_footer(); ?>

@@ -18,9 +18,14 @@ get_header(); ?>
 				</div>
 				<div class="widget-area">
 					<?php
+					$leadin_text = get_field('leadin_text');  
 					$cta_button_name = get_field('cta_button_name');  
-					$cta_button_link = get_field('cta_button_link');  
-					if($cta_button_name && $cta_button_link) {  ?>
+					$cta_button_link = get_field('cta_button_link');
+					?>
+					<?php if ($leadin_text) { ?>
+					  	<div class="leadintext"><?php echo $leadin_text ?></div>
+					<?php } ?>  
+					<?php if($cta_button_name && $cta_button_link) {  ?>
 						<div class="buttondiv">
 							<a class="cta-btn" href="<?php echo $cta_button_link ?>"><?php echo $cta_button_name ?></a>
 						</div>
