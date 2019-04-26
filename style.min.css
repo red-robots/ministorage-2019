@@ -2314,6 +2314,8 @@ body .gform_wrapper .gform_body .top_label div.ginput_container{margin-top:3px}
 .recent-news-posts .post-link a{font-size:13px}
 .mainbtn{display:inline-block;text-decoration:none;color:#FFF;background:#ed293b;font-size:13px;padding:7px 15px 6px}
 .mainbtn:hover{color:#FFF;opacity:.45}
+body.single-post .entry-title{margin-bottom:3px}
+body.single-post .post-date{font-size:13px}
 body.single-post #secondary{background:#ebebeb;margin-bottom:50px}
 body.single-post .widget{margin:0}
 body.single-post .widget-title{margin:0;font-size:16px;font-weight:500;line-height:1.3;padding:5px 20px;background:#16325b;color:#FFF}

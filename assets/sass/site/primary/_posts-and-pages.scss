@@ -1633,6 +1633,12 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 	}
 }
 body.single-post {
+	.entry-title {
+		margin-bottom: 3px;
+	}
+	.post-date {
+		font-size: 13px;
+	}
 	#secondary {
 		background: $color-light-grey;
 		margin-bottom: 50px;

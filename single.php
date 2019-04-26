@@ -17,6 +17,9 @@ $post_type = get_post_type(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						<?php if ($post_type=='post') {  ?>
+						<div class="post-date"><?php echo get_the_date('F j, Y'); ?></div>
+						<?php } ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
