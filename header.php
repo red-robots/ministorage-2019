@@ -20,6 +20,462 @@
 <?php wp_head(); ?>
 <?php $analytics = get_field('google_analytics','option'); ?>
 <?php if ($analytics) { ?><?php echo $analytics ?><?php } ?>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W399GS3');</script>
+<!-- End Google Tag Manager -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55678318-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="application/ld+json">
+{
+
+"@context" : "http://schema.org",
+
+"@type" : "Organization",
+
+"name" : "The Mini Storage Center",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png",
+
+"url" : "https://ministoragecarolina.com/",
+
+"parentOrganization": 
+
+[
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "The Mini Storage Center",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Charlotte",
+
+"addressRegion": "NC",
+
+"postalCode": "28208",
+
+"streetAddress": "2318 Freedom Dr"
+
+},
+
+"telephone" : "(704) 393-1425",
+
+"email" : "fd@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "The Mini Storage Center",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Charlotte",
+
+"addressRegion": "NC",
+
+"postalCode": "28205",
+
+"streetAddress": "1515 E. Sugar Creek Rd"
+
+},
+
+"telephone" : "(704) 375-7983",
+
+"email" : "sc@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "The Mini Storage Center",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Charlotte",
+
+"addressRegion": "NC",
+
+"postalCode": "28205",
+
+"streetAddress": "4500 Monroe Rd"
+
+},
+
+"telephone" : "(704) 333-7064",
+
+"email" : "mr@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "The Mini Storage Center",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Charlotte",
+
+"addressRegion": "NC",
+
+"postalCode": "28209",
+
+"streetAddress": "4475 South Blvd"
+
+},
+
+"telephone" : "(704) 523-1156",
+
+"email" : "sb@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "The Mini Storage Center",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Charlotte",
+
+"addressRegion": "NC",
+
+"postalCode": "28273",
+
+"streetAddress": "700-A Westinghouse Blvd"
+
+},
+
+"telephone" : "(704) 588-3915",
+
+"email" : "wb@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "The Mini Storage Center",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Columbia",
+
+"addressRegion": "SC",
+
+"postalCode": "29169",
+
+"streetAddress": "730 Chris Dr"
+
+},
+
+"telephone" : "(803) 794-4228",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "501 Mini Storage",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Conway",
+
+"addressRegion": "SC",
+
+"postalCode": "29526",
+
+"streetAddress": "490 University Forest Dr"
+
+},
+
+"telephone" : "(843) 349-9800",
+
+"email" : "501@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "501 Mini Storage",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Conway",
+
+"addressRegion": "SC",
+
+"postalCode": "29526",
+
+"streetAddress": "1488 Hwy 501"
+
+},
+
+"telephone" : "(843) 349-9800",
+
+"email" : "501@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "501 Mini Storage",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Conway",
+
+"addressRegion": "SC",
+
+"postalCode": "29526",
+
+"streetAddress": "1480 Hwy 501 Bus"
+
+},
+
+"telephone" : "(843) 349-9800",
+
+"email" : "501@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "Garden City Self Storage",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Garden City",
+
+"addressRegion": "SC",
+
+"postalCode": "29576",
+
+"streetAddress": "12053 Hwy 17 Bypass"
+
+},
+
+"telephone" : "(843) 651-0440",
+
+"email" : "gc@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "Garden City Storage",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Garden City",
+
+"addressRegion": "SC",
+
+"postalCode": "29576",
+
+"streetAddress": "605 Boundary Ave"
+
+},
+
+"telephone" : "(843) 651-0440",
+
+"email" : "gc@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "Garden City Storage",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Garden City",
+
+"addressRegion": "SC",
+
+"postalCode": "29576",
+
+"streetAddress": "565 Pine Ave"
+
+},
+
+"telephone" : "(843) 651-0440",
+
+"email" : "gc@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "Coastal Storage & Retail",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Myrtle Beach",
+
+"addressRegion": "SC",
+
+"postalCode": "29588",
+
+"streetAddress": "Coastal Storage & Retail"
+
+},
+
+"telephone" : "(843) 650-6802",
+
+"email" : "707@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "The Mini Storage Center",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Rock Hill",
+
+"addressRegion": "SC",
+
+"postalCode": "29732",
+
+"streetAddress": "1370 Constitution Blvd"
+
+},
+
+"telephone" : "(803) 985-3660",
+
+"email" : "rh@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+},
+
+{
+
+"@type": "LocalBusiness",
+
+"name" : "The Mini Storage Center",
+
+"address": {
+
+"@type": "PostalAddress",
+
+"addressLocality": "Spartanburg",
+
+"addressRegion": "SC",
+
+"postalCode": "29301",
+
+"streetAddress": "350 E. Blackstock Rd"
+
+},
+
+"telephone" : "(864) 587-9515",
+
+"email" : "sp@ministoragecarolina.com",
+
+"image" : "http://ministoragecarolina.com/bw/wp-content/themes/ministorage-carolina/images/logo.png"
+
+}
+
+]
+
+}
+</script>
 </head>
 
 <body <?php body_class(); ?>>
