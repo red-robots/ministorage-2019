@@ -1782,6 +1782,45 @@ section.faqs {
 		}
 	}
 }
-
+.testimonials-list {
+	border-top: 2px solid $color-navy;
+	border-bottom: 2px solid $color-navy;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	margin-top: 40px;
+	@media screen and (min-width: $tabwidth) {
+		margin-top: 80px;
+	}
+	.flexrow {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.section-title {
+		margin-top: 0;
+		margin-bottom: 15px;
+	}
+	.flexcol {
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-bottom: 20px;
+		@media screen and (min-width: $tabwidth) {
+			width: 33.3%;
+			margin-bottom: 0;
+		}
+	}
+	.inside {
+		height: 100%;
+		box-sizing: border-box;
+		font-size: 13px;
+		line-height: 1.5;
+		p {
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+		.author {
+			font-weight: bold;
+		}
+	}
+}
 
 

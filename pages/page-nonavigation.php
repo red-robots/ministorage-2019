@@ -15,6 +15,7 @@ get_header(); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="content-area">
 					<div class="entry-content"><?php the_content(); ?></div>
+					<?php get_template_part('template-parts/latest-testimonials'); ?>
 				</div>
 
 				<div class="widget-area">

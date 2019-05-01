@@ -2340,6 +2340,15 @@ section.faqs{width:100%;float:left}
 .page-template-page-nonavigation .site-header{height:50px}
 @media screen and (min-width:600px){.page-template-page-nonavigation .site-header{height:68px}
 }.page-template-page-nonavigation .contact-details p{margin-top:0}
+.testimonials-list{border-top:2px solid #16325b;border-bottom:2px solid #16325b;padding-top:20px;padding-bottom:30px;margin-top:40px}
+@media screen and (min-width:600px){.testimonials-list{margin-top:80px}
+}.testimonials-list .flexrow{margin-left:-15px;margin-right:-15px}
+.testimonials-list .section-title{margin-top:0;margin-bottom:15px}
+.testimonials-list .flexcol{padding-left:15px;padding-right:15px;margin-bottom:20px}
+@media screen and (min-width:600px){.testimonials-list .flexcol{width:33.3%;margin-bottom:0}
+}.testimonials-list .inside{height:100%;box-sizing:border-box;font-size:13px;line-height:1.5}
+.testimonials-list .inside p{margin-top:0;margin-bottom:10px}
+.testimonials-list .inside .author{font-weight:bold}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
