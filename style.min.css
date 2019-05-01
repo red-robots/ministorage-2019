@@ -2337,6 +2337,9 @@ section.faqs{width:100%;float:left}
 .plus-minus-toggle.collapsed:after{-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}
 .plus-minus-toggle.collapsed:before{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}
 .leadintext{margin-bottom:15px}
+.page-template-page-nonavigation .site-header{height:50px}
+@media screen and (min-width:600px){.page-template-page-nonavigation .site-header{height:68px}
+}.page-template-page-nonavigation .contact-details p{margin-top:0}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

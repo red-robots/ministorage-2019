@@ -1769,6 +1769,19 @@ section.faqs {
 .leadintext {
 	margin-bottom: 15px;
 }
+.page-template-page-nonavigation {
+	.site-header {
+		height: 50px;
+		@media screen and (min-width: $tabwidth) {
+			height: 68px;
+		}
+	}
+	.contact-details {
+		p {
+			margin-top: 0;
+		}
+	}
+}
 
 
 

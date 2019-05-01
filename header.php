@@ -478,6 +478,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 </head>
 
+<?php  
+$page_template = ( is_page_template() && get_page_template_slug()) ? basename(get_page_template_slug()) : '';
+$page_template = ($page_template) ? str_replace('.php','',$page_template) : '';
+$page_has_navigation = ($page_template && $page_template=='page-nonavigation') ? false : true;
+?>
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<header id="masthead" class="site-header clear" role="banner">
@@ -492,6 +497,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
 		            </h1>
 		        <?php } ?>
+
+		        <?php if ($page_has_navigation) { ?>
+		        	
+		        
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<span id="toggleMenu" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'acstarter' ); ?><span><i></i></span></span>
 					<?php 
@@ -506,6 +515,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<a class="header-button" href="<?php echo $hdr_button_link ?>"><span><?php echo $hdr_button_name ?></span></a>
 					<?php } ?>
 				</nav><!-- #site-navigation -->
+
+				<?php } ?>
 			</div>
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
