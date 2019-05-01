@@ -13,16 +13,6 @@ get_header(); ?>
 					<header class="entry-header">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-						<?php
-							the_content();
-							$readmore = get_field('read_more_link');
-						?>
-						<?php if ($readmore) { ?>
-						<div class="buttondiv"><a class="mainbtn" href="<?php echo $readmore ?>">Read More</a></div>	
-						<?php } ?>
-					</div><!-- .entry-content -->
 				</article>
 			<?php endwhile; ?>
 			</div>

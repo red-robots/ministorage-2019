@@ -90,19 +90,8 @@
 							</div>
 							<div class="box-inner-pad <?php echo($box_2_inner_image) ? 'has-image':'no-image'; ?>">
 								<div class="boxinnertxt"><?php echo $box_2_inner_content ?></div>
-								<?php if ($box_2_inner_image) { ?>
-								<div class="box-inner-image">
-									<?php if ($box_2_inner_btn_name && $box_2_inner_btn_link) { 
-										$same_url2 = is_same_root_url($box_2_inner_btn_link,$site_url); 
-										$target_link2 = ($same_url2) ? '_self':'_blank'; ?>
-										<a class="imagelink" href="<?php echo $box_2_inner_btn_link ?>" target="<?php echo $target_link2 ?>">
-											<img src="<?php echo $box_2_inner_image['url'] ?>" alt="<?php echo $box_2_inner_image['title'] ?>" />
-											<span class="btntxt"><?php echo $box_2_inner_btn_name ?></span>
-										</a>
-									<?php } else { ?>
-										<img src="<?php echo $box_2_inner_image['url'] ?>" alt="<?php echo $box_2_inner_image['title'] ?>" />
-									<?php } ?>
-								</div>
+								<?php if ($box_2_inner_btn_name && $box_2_inner_btn_link) { ?>
+								<div class="boxbuttondiv"><a class="boxButtonlink" href="<?php echo $box_2_inner_btn_link ?>"><?php echo $box_2_inner_btn_name ?></a></div>
 								<?php } ?>
 							</div>
 						</div>
@@ -144,20 +133,9 @@
 								<div class="pad"><span class="txt1 text-center"><?php echo $box_3_title ?></span></div>
 							</div>
 							<div class="box-inner-pad <?php echo($box_3_inner_image) ? 'has-image':'no-image'; ?>">
-								<div class="boxinnertxt"><?php echo $box_2_inner_content ?></div>
-								<?php if ($box_3_inner_image) { ?>
-								<div class="box-inner-image">
-									<?php if ($box_3_inner_btn_name && $box_3_inner_btn_link) { 
-										$same_url3 = is_same_root_url($box_3_inner_btn_link,$site_url); 
-										$target_link3 = ($same_url3) ? '_self':'_blank'; ?>
-										<a class="imagelink" href="<?php echo $box_3_inner_btn_link ?>" target="<?php echo $target_link3 ?>">
-											<img src="<?php echo $box_3_inner_image['url'] ?>" alt="<?php echo $box_3_inner_image['title'] ?>" />
-											<span class="btntxt"><?php echo $box_3_inner_btn_name ?></span>
-										</a>
-									<?php } else { ?>
-										<img src="<?php echo $box_3_inner_image['url'] ?>" alt="<?php echo $box_3_inner_image['title'] ?>" />
-									<?php } ?>
-								</div>
+								<div class="boxinnertxt"><?php echo $box_3_inner_content ?></div>
+								<?php if ($box_3_inner_btn_name && $box_3_inner_btn_link) { ?>
+								<div class="boxbuttondiv"><a class="boxButtonlink" href="<?php echo $box_3_inner_btn_link ?>"><?php echo $box_3_inner_btn_name ?></a></div>
 								<?php } ?>
 							</div>
 						</div>

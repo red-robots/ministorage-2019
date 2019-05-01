@@ -11,6 +11,11 @@
 		padding-bottom: 40px;
 	}
 }
+.entry-content {
+	p {
+		margin-top: 0;
+	}
+}
 .flexrow {
 	position: relative;
 	margin-left: -15px;
@@ -132,14 +137,14 @@
 	}
 	.txt1 {
 		font-weight: 600;
-		font-size: 23px;
+		font-size: 25px;
 		line-height: 1.2;
 		text-transform: uppercase;
 	}
 	.txt2 {
-		font-size: 14px;
+		font-size: 16px;
 		font-weight: 300;
-		line-height: 1.5;
+		line-height: 1.3;
 		margin-top: 10px;
 	}
 	.icon {
@@ -209,8 +214,25 @@
 				float: left;
 			}
 		}
+		.boxbuttondiv {
+			text-align: center;
+			margin-top: 25px;
+		}
+		.boxButtonlink {
+			display: inline-block;
+			padding: 6px 15px 5px;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 1.5;
+			color: #FFF;
+			background: $color-red;
+			text-transform: uppercase;
+			&:hover {
+				color: #FFF;
+				transform: scale(1.2);
+			}
+		}
 	}
-
 
 	.box-inner-image {
 		display: inline-block;
@@ -227,7 +249,7 @@
 		}
 		.btntxt {
 			display: block;
-			background: $color-green;
+			background: $color-red;
 			color: #FFF;
 			font-weight: 300;
 			font-size: 13px;
@@ -251,7 +273,7 @@
 		top: 0;
 		z-index: 5;
 		.pad {
-			background: $color-red;
+			background: $color-green;
 			width: 100%;
 			padding: 5px 10px;
 		}
@@ -1053,12 +1075,13 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 			line-height: 1.3;
 			text-transform: uppercase;
 			text-decoration: none;
-			background: $color-green;
+			background: $color-red;
 			border-radius: 5px;
 			color: #FFF;
 			padding: 15px 30px 12px;
 			&:hover {
-				background: $color-light-green;
+				color: #FFF;
+				background: $color-light-red;
 			}
 		}
 	}
@@ -1272,7 +1295,6 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 			}
 			iframe {
 				width: 100%!important;
-				height: 400px!important;
 			}
 		}
 		.col-left {
@@ -1577,9 +1599,6 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 			float: left;
 		}
 	}
-	.widget-area .buttondiv {
-		margin-top: 15px;
-	}
 }
 .recent-news-posts {
 	background: $color-navy;
@@ -1676,8 +1695,8 @@ body.single-post {
 }
 
 section.faqs {
-	max-width: 700px;
 	width: 100%;
+	float: left;
 }
 .faqrow {
 	width: auto;
@@ -1746,6 +1765,9 @@ section.faqs {
         transform: rotate(180deg);
       }
     }
+}
+.leadintext {
+	margin-bottom: 15px;
 }
 
 
