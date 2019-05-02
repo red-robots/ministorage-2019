@@ -204,8 +204,8 @@ jQuery(document).ready(function ($) {
 
 	/* Sticky Sidebar */
 	var a = new StickySidebar('.sticky_sidebar', {
-		topSpacing: 60,
-		bottomSpacing: 60,
+		topSpacing: 40,
+		bottomSpacing: 40,
 		containerSelector: '#main',
 		innerWrapperSelector: '.sidebar__inner'
 	});
