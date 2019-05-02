@@ -1785,7 +1785,7 @@ section.faqs {
 .testimonials-list {
 	border-top: 2px solid $color-navy;
 	border-bottom: 2px solid $color-navy;
-	padding-top: 20px;
+	padding-top: 30px;
 	padding-bottom: 30px;
 	margin-top: 40px;
 	@media screen and (min-width: $tabwidth) {
@@ -1818,9 +1818,18 @@ section.faqs {
 			margin-bottom: 10px;
 		}
 		.author {
+			margin-top: 8px;
 			font-weight: bold;
 		}
 	}
+}
+.sticky_sidebar {
+	.sidebar__inner {
+		@include transition(all ease-out .3s);
+	}
+}
+.sticky_sidebar.is-affixed {
+	z-index: 1000;
 }
 
 

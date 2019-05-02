@@ -12,10 +12,15 @@ if ( $testimonials->have_posts() ) {  ?>
 	<div class="inner-pad clear">
 		<h2 class="section-title">Testimonials</h2>
 		<div class="flexrow">
-			<?php while ( $testimonials->have_posts() ) : $testimonials->the_post(); ?>
+			<?php while ( $testimonials->have_posts() ) : $testimonials->the_post(); 
+			$more_text = '<a href="'.get_permalink().'">[more]</a>';
+			$content = get_the_content();
+			$content = strip_tags($content);
+			$content = shortenText($content,260,',','...'.$more_text);
+			?>
 			<div class="flexcol">
 				<div class="inside">
-					<div class="text"><?php the_excerpt(); ?></div>
+					<div class="text"><?php echo $content; ?></div>
 					<div class="author"><?php the_title(); ?></div>
 				</div>
 			</div>

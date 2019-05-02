@@ -25,6 +25,19 @@ function acstarter_scripts() {
 			true 
 		);
 
+	wp_enqueue_script( 
+			'resize_sensor', 
+			get_template_directory_uri() . '/assets/js/vendors/ResizeSensor.js', 
+			array(), '20190301', 
+			true 
+		);
+
+	wp_enqueue_script( 
+			'sticky_sidebar', 
+			get_template_directory_uri() . '/assets/js/vendors/sticky-sidebar.js', 
+			array(), '20190301', 
+			true 
+		);
 
 	wp_enqueue_script( 
 			'acstarter-custom', 

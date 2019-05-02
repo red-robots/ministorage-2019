@@ -1971,7 +1971,7 @@ h1.entry-title{margin-top:20px;font-size:25px;font-weight:600;line-height:1.3;te
 @media screen and (min-width:600px){.content-area{width:66%;float:left;margin:0}
 }@media screen and (min-width:1200px){}
 .widget-area{width:100%;margin:0 auto}
-@media screen and (min-width:600px){.widget-area{width:26%;float:right;margin:0}
+@media screen and (min-width:600px){.widget-area{width:28%;float:right;margin:0}
 }@media screen and (min-width:1200px){}
 .logo{display:inline-block;width:160px;margin-top:10px;position:absolute;top:0;left:20px;z-index:110}
 @media screen and (min-width:600px){.logo{left:0;width:200px;margin-top:15px}
@@ -2340,7 +2340,7 @@ section.faqs{width:100%;float:left}
 .page-template-page-nonavigation .site-header{height:50px}
 @media screen and (min-width:600px){.page-template-page-nonavigation .site-header{height:68px}
 }.page-template-page-nonavigation .contact-details p{margin-top:0}
-.testimonials-list{border-top:2px solid #16325b;border-bottom:2px solid #16325b;padding-top:20px;padding-bottom:30px;margin-top:40px}
+.testimonials-list{border-top:2px solid #16325b;border-bottom:2px solid #16325b;padding-top:30px;padding-bottom:30px;margin-top:40px}
 @media screen and (min-width:600px){.testimonials-list{margin-top:80px}
 }.testimonials-list .flexrow{margin-left:-15px;margin-right:-15px}
 .testimonials-list .section-title{margin-top:0;margin-bottom:15px}
@@ -2348,7 +2348,9 @@ section.faqs{width:100%;float:left}
 @media screen and (min-width:600px){.testimonials-list .flexcol{width:33.3%;margin-bottom:0}
 }.testimonials-list .inside{height:100%;box-sizing:border-box;font-size:13px;line-height:1.5}
 .testimonials-list .inside p{margin-top:0;margin-bottom:10px}
-.testimonials-list .inside .author{font-weight:bold}
+.testimonials-list .inside .author{margin-top:8px;font-weight:bold}
+.sticky_sidebar .sidebar__inner{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.sticky_sidebar.is-affixed{z-index:1000}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

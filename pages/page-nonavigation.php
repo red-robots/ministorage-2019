@@ -18,7 +18,8 @@ get_header(); ?>
 					<?php get_template_part('template-parts/latest-testimonials'); ?>
 				</div>
 
-				<div class="widget-area">
+				<div class="widget-area sticky_sidebar">
+					<div class="sidebar__inner clear">
 					<?php 
 					$contact_details = get_field('contact_details'); 
 					?>
@@ -27,6 +28,7 @@ get_header(); ?>
 						<?php echo $contact_details; ?>
 					</div>
 					<?php } ?>
+					</div>
 				</div>
 			</article>
 			<?php endwhile; ?>
