@@ -1962,7 +1962,7 @@ html[xmlns] .flexslider .slides{display:block}
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong{overflow-wrap:normal;word-wrap:normal;-ms-word-break:normal;word-break:normal;word-break:normal;-ms-hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;hyphens:none;page-break-inside:avoid}
 *{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 a{font-weight:normal;text-shadow:none;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
-h1.entry-title{margin-top:20px;font-size:25px;font-weight:600;line-height:1.3;text-transform:uppercase}
+h1.entry-title,.entry-title{margin-top:20px;font-size:25px;font-weight:600;line-height:1.3;text-transform:uppercase}
 .text-center{text-align:center}
 .flexrow:before,.flexrow:after,.clear:before,.clear:after{content:" ";display:table}
 .flexrow,.clear{*zoom:1;clear:both}
@@ -2339,8 +2339,8 @@ section.faqs{width:100%;float:left}
 .page-template-page-nonavigation .site-header{height:50px}
 @media screen and (min-width:600px){.page-template-page-nonavigation .site-header{height:68px}
 }.page-template-page-nonavigation .contact-details p{margin-top:0}
-.testimonials-list{border-top:2px solid #16325b;border-bottom:2px solid #16325b;padding-top:30px;padding-bottom:30px;margin-top:40px}
-@media screen and (min-width:600px){.testimonials-list{margin-top:80px}
+.testimonials-list{border-top:2px solid #16325b;border-bottom:2px solid #16325b;padding-top:30px;padding-bottom:30px;margin-top:40px;margin-bottom:40px}
+@media screen and (min-width:900px){.testimonials-list{margin-top:80px}
 }.testimonials-list .flexrow{margin-left:-15px;margin-right:-15px}
 .testimonials-list .section-title{margin-top:0;margin-bottom:15px}
 .testimonials-list .flexcol{padding-left:15px;padding-right:15px;margin-bottom:20px}
@@ -2349,7 +2349,20 @@ section.faqs{width:100%;float:left}
 .testimonials-list .inside p{margin-top:0;margin-bottom:10px}
 .testimonials-list .inside .author{margin-top:8px;font-weight:bold}
 .sticky_sidebar .sidebar__inner{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
-.sticky_sidebar.is-affixed{z-index:1000}
+.sticky_sidebar.is-affixed{z-index:1000;margin-top:-8%}
+.content-area-wrap{width:100%;margin-bottom:20px}
+@media screen and (min-width:900px){.content-area-wrap{width:66%;float:left;margin-bottom:0}
+}.widget-contact-info{width:100%;position:relative}
+@media screen and (min-width:900px){.widget-contact-info{width:28%;float:right}
+}.widget-contact-info h2{margin:0;font-size:22px;line-height:1.3}
+.widget-contact-info .gform_wrapper{background:#efefef;padding:20px}
+.widget-contact-info .gform_wrapper ul.gform_fields li:first-child{margin-top:0}
+.widget-contact-info .gform_wrapper li#field_20_2{margin-top:5px}
+.widget-contact-info .gform_wrapper{margin-top:0 !important}
+.widget-contact-info .gform_wrapper ul.gform_fields li.gfield{padding-right:0}
+.widget-contact-info .gform_wrapper .gform_footer{margin-top:0 !important}
+.widget-contact-info .innerWrap{background:#efefef;padding:20px}
+.widget-contact-info #phoneInfoArea{margin-bottom:20px}
 .masonry-style{-webkit-column-count:1;-moz-column-count:1;column-count:1;-webkit-column-gap:25px;-moz-column-gap:25px;column-gap:25px}
 @media screen and (min-width:600px){.masonry-style{-webkit-column-count:2;-moz-column-count:2;column-count:2}
 }@media screen and (min-width:900px){.masonry-style{-webkit-column-count:3;-moz-column-count:3;column-count:3}
@@ -2370,7 +2383,9 @@ section.faqs{width:100%;float:left}
 .contact-location-list .info a{color:#16325b;text-decoration:none}
 .contact-location-list .info a:hover{color:#ed293b}
 .page-template-page-contact .entry-content{margin-bottom:20px}
-.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+.nonavpage .entry-content{margin-bottom:20px}
+@media screen and (min-width:900px){.nonavpage .entry-content{margin-bottom:60px}
+}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

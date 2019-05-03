@@ -20,7 +20,8 @@ a {
 	text-shadow: none;
 	@include transition(all ease-out .3s);
 }
-h1.entry-title {
+h1.entry-title,
+.entry-title {
 	margin-top: 20px;
 	font-size: 25px;
     font-weight: 600;

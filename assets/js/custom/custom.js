@@ -203,13 +203,30 @@ jQuery(document).ready(function ($) {
 	});
 
 	/* Sticky Sidebar */
-	if( $('.sticky_sidebar').length>0 ) {
-		var a = new StickySidebar('.sticky_sidebar', {
-			topSpacing: 40,
-			bottomSpacing: 40,
-			containerSelector: '#main',
-			innerWrapperSelector: '.sidebar__inner'
-		});
+	do_stick_sidebar();
+	function do_stick_sidebar() {
+		if( $('.widget-contact-info').length>0 ) {
+			var content_width = $(".site-content").outerWidth();
+			if(content_width>899) {
+				var a = new StickySidebar('.sticky_sidebar', {
+					topSpacing: 10,
+					bottomSpacing: 10,
+					containerSelector: '#main',
+					innerWrapperSelector: '.sidebar__inner',
+					resizeSensor: true,
+					stopper: "#sticky_stopper"
+				});
+			}
+		}
 	}
+
+	$( window ).resize(function() {
+	  do_stick_sidebar();
+	});
+
+	if( $('.widget-contact-info .gform_wrapper').length>0 ) {
+		$('.widget-contact-info .gform_wrapper').appendTo( $("#gformArea") );
+	}
+
 
 });// END #####################################    END
