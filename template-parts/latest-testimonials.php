@@ -20,7 +20,16 @@ if ( $testimonials->have_posts() ) {  ?>
 			?>
 			<div class="flexcol">
 				<div class="inside">
-					<div class="text"><?php echo $content; ?></div>
+					<div class="text">
+						<div class="rating">
+							<span class="star"><i class="fas fa-star"></i></span>
+							<span class="star"><i class="fas fa-star"></i></span>
+							<span class="star"><i class="fas fa-star"></i></span>
+							<span class="star"><i class="fas fa-star"></i></span>
+							<span class="star"><i class="fas fa-star"></i></span>
+						</div>
+						<?php echo $content; ?>
+					</div>
 					<div class="author"><?php the_title(); ?></div>
 				</div>
 			</div>

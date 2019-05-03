@@ -2342,12 +2342,15 @@ section.faqs{width:100%;float:left}
 .testimonials-list{border-top:2px solid #16325b;border-bottom:2px solid #16325b;padding-top:30px;padding-bottom:30px;margin-top:40px;margin-bottom:40px}
 @media screen and (min-width:900px){.testimonials-list{margin-top:80px}
 }.testimonials-list .flexrow{margin-left:-15px;margin-right:-15px}
-.testimonials-list .section-title{margin-top:0;margin-bottom:15px}
+@media screen and (min-width:600px){.testimonials-list .flexrow{-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+}.testimonials-list .section-title{margin-top:0;margin-bottom:15px}
 .testimonials-list .flexcol{padding-left:15px;padding-right:15px;margin-bottom:20px}
-@media screen and (min-width:600px){.testimonials-list .flexcol{width:33.3%;margin-bottom:0}
-}.testimonials-list .inside{height:100%;box-sizing:border-box;font-size:13px;line-height:1.5}
+@media screen and (min-width:600px){.testimonials-list .flexcol{width:49.9%;margin-bottom:30px}
+}.testimonials-list .inside{height:100%;box-sizing:border-box;font-size:14px;line-height:1.5}
 .testimonials-list .inside p{margin-top:0;margin-bottom:10px}
 .testimonials-list .inside .author{margin-top:8px;font-weight:bold}
+.testimonials-list .rating{margin-bottom:2px}
+.testimonials-list .rating .star{display:inline-block;font-size:14px;color:#f5ca45}
 .sticky_sidebar .sidebar__inner{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .sticky_sidebar.is-affixed{z-index:1000;margin-top:-8%}
 .content-area-wrap{width:100%;margin-bottom:20px}
