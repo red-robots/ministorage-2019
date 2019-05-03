@@ -203,11 +203,13 @@ jQuery(document).ready(function ($) {
 	});
 
 	/* Sticky Sidebar */
-	var a = new StickySidebar('.sticky_sidebar', {
-		topSpacing: 40,
-		bottomSpacing: 40,
-		containerSelector: '#main',
-		innerWrapperSelector: '.sidebar__inner'
-	});
+	if( $('.sticky_sidebar').length>0 ) {
+		var a = new StickySidebar('.sticky_sidebar', {
+			topSpacing: 40,
+			bottomSpacing: 40,
+			containerSelector: '#main',
+			innerWrapperSelector: '.sidebar__inner'
+		});
+	}
 
 });// END #####################################    END
