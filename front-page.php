@@ -76,6 +76,27 @@ get_header();
 							<div class="titlediv">
 								<h3 class="section-title text-center">News</h3>
 							</div>
+							<?php
+								$coupon_title1 = get_field('coupon_title1'); 
+								$coupon_title2 = get_field('coupon_title2'); 
+								$coupon_description = get_field('coupon_description'); 
+								if($coupon_title1 || $coupon_title2) { ?>
+									<div class="coupon">
+										<div class="c_inside clear">
+											<div class="wrap">
+												<?php if ($coupon_title1) { ?>
+												<div class="line1"><?php echo $coupon_title1 ?></div>
+												<?php } ?>
+												<?php if ($coupon_title2) { ?>
+												<div class="line2"><?php echo $coupon_title2 ?></div>
+												<?php } ?>
+												<?php if ($coupon_description) { ?>
+												<div class="coupon_description"><?php echo $coupon_description ?></div>
+												<?php } ?>
+											</div>
+										</div>
+									</div>
+								<?php } ?>
 							<?php get_template_part('template-parts/home-latest-news'); ?>
 							<div class="overlay news-overlay"></div>
 						</div>

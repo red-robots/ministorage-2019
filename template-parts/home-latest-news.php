@@ -1,5 +1,5 @@
 <?php
-$perpage = 3;
+$perpage = 2;
 $args = array(
 	'posts_per_page'   => $perpage,
 	'orderby'          => 'date',
