@@ -2269,7 +2269,8 @@ body .gform_wrapper .gform_body .top_label div.ginput_container{margin-top:3px}
 .table-style.normal-table td{padding:8px 10px;width:auto;float:none;border-left:1px solid #e6e8e8}
 .table-style.normal-table td.bcol1{border-left:0}
 .table-style.normal-table tbody tr td:first-child{border-left:0}
-.size_pricing .table-style{max-width:700px;width:100%}
+.size_pricing{max-width:815px;width:100%;margin:0 auto}
+.size_pricing table.table-style{width:100%}
 .size_pricing tbody tr td{text-align:center}
 @media screen and (min-width:600px){.size_pricing tbody tr td{text-align:center}
 }.size_pricing tbody tr td.bcol1{text-align:left}
@@ -2388,7 +2389,9 @@ section.faqs{width:100%;float:left}
 .page-template-page-contact .entry-content{margin-bottom:20px}
 .nonavpage .entry-content{margin-bottom:20px}
 @media screen and (min-width:900px){.nonavpage .entry-content{margin-bottom:60px}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.tab-content iframe{border:none !important;width:100%;height:780px}
+#details2 iframe{position:relative;left:13px;margin-top:20px}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

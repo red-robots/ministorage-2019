@@ -232,6 +232,9 @@ get_header(); ?>
 								<?php if ($make_a_reservation) { ?>
 									<div class="infowrap"><?php echo $make_a_reservation; ?></div>
 								<?php } ?>
+								<?php if ($iframe_res) { ?>
+									<div class="infowrap"><?php echo $iframe_res; ?></div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
@@ -243,6 +246,9 @@ get_header(); ?>
 							<div class="innerpad clear">
 								<?php if ($make_a_payment) { ?>
 									<div class="infowrap"><?php echo $make_a_payment; ?></div>
+								<?php } ?>
+								<?php if ($iframe_pay) { ?>
+									<div class="infowrap"><?php echo $iframe_pay; ?></div>
 								<?php } ?>
 							</div>
 						</div>
