@@ -19,7 +19,10 @@
 <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
 <?php wp_head(); ?>
-<?php $analytics = get_field('google_analytics','option'); ?>
+<?php 
+$analytics = get_field('google_analytics','option'); 
+echo $analytics;
+?>
 
 
 <script type="application/ld+json">
