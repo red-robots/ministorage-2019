@@ -2234,9 +2234,9 @@ body .gform_wrapper .gform_body .top_label div.ginput_container{margin-top:3px}
 .tabswrapper .tabs-style li.active a:after{width:98%;height:100%;bottom:-6px;left:1px}
 .tabswrapper .tab-content-wrapper{position:relative;background:#FFF;box-shadow:0 0 9px -1px rgba(0,0,0,0.15)}
 @media screen and (min-width:600px){.tabswrapper .tab-content-wrapper{padding:20px;top:-1px;border:1px solid #dfdfdf}
-}.tabswrapper .tab-content{display:block}
+}.tabswrapper .tab-content{display:block;width:100%;float:left;z-index:10;position:relative}
 @media screen and (min-width:600px){.tabswrapper .tab-content{display:none}
-}.tabswrapper .tab-content.active{display:block}
+}.tabswrapper .tab-content.active{display:block;z-index:5}
 .tabswrapper .tab-inner-content{display:block;overflow:hidden;max-height:0;opacity:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 @media screen and (min-width:600px){.tabswrapper .tab-inner-content{overflow:auto;-webkit-transition:none;transition:none;height:auto;opacity:1}
 }.tabswrapper .tab-inner-content.active{display:block}
@@ -2248,7 +2248,11 @@ body .gform_wrapper .gform_body .top_label div.ginput_container{margin-top:3px}
 @media screen and (min-width:600px){.tabswrapper .tab-inner-content .col-left{width:48%;float:left}
 }@media screen and (min-width:600px){.tabswrapper .tab-inner-content .col-right{width:48%;float:right}
 }.tabswrapper .active .tab-inner-content,.tabswrapper .open .tab-inner-content{display:block;height:auto;max-height:100%;opacity:1}
-.tabswrapper .tab-title{display:block;font-size:18px;font-weight:normal;line-height:1.3;color:#16325b;margin:2px 0 0;padding:10px 15px;position:relative;border:1px solid #dfdfdf}
+.tabswrapper .tab-label{display:block;text-decoration:none;font-size:18px;font-weight:normal;line-height:1.3;color:#16325b;margin:0;padding:10px 15px;position:relative;border:1px solid #dfdfdf;z-index:20;width:100%;float:left;box-sizing:border-box}
+@media screen and (min-width:600px){.tabswrapper .tab-label{display:none}
+}.tabswrapper .tab-label .arrow{display:inline-block;position:absolute;right:18px;font-size:20px;color:#CCC;overflow:hidden;width:21px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.tabswrapper .active .tab-label .arrow{-webkit-transform:rotate(-180deg);-ms-transform:rotate(-180deg);transform:rotate(-180deg)}
+.tabswrapper .tab-title{display:none;font-size:18px;font-weight:normal;line-height:1.3;color:#16325b;margin:2px 0 0;padding:10px 15px;position:relative;border:1px solid #dfdfdf;z-index:20}
 @media screen and (min-width:600px){.tabswrapper .tab-title{display:none}
 }.tabswrapper .tab-title .arrow{display:inline-block;position:absolute;right:18px;font-size:20px;color:#CCC;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .tabswrapper .tab-title .arrow.open{-webkit-transform:rotate(-180deg);-ms-transform:rotate(-180deg);transform:rotate(-180deg)}
@@ -2263,6 +2267,7 @@ body .gform_wrapper .gform_body .top_label div.ginput_container{margin-top:3px}
 .tabswrapper .flexcol.feature-list li{position:relative;padding-left:20px;line-height:1.3;margin-bottom:8px}
 .tabswrapper .flexcol.feature-list .disc{display:block;width:10px;height:10px;background:#ed293b;position:absolute;top:4px;left:0}
 .tabswrapper .flexcol.feature-list .check-icon{color:#ed293b;position:absolute;top:2px;left:0;font-size:13px}
+.tabswrapper .mapdiv{overflow:hidden}
 .table-style.normal-table thead{display:table-header-group}
 .table-style.normal-table thead tr th:first-child{border-left:0}
 .table-style.normal-table th{padding:10px 10px}
@@ -2389,7 +2394,7 @@ section.faqs{width:100%;float:left}
 .page-template-page-contact .entry-content{margin-bottom:20px}
 .nonavpage .entry-content{margin-bottom:20px}
 @media screen and (min-width:900px){.nonavpage .entry-content{margin-bottom:60px}
-}.tab-content iframe{border:none !important;width:100%;height:780px}
+}.tab-content .iframediv iframe{border:none !important;width:100%;height:780px}
 #details2 iframe{position:relative;left:13px;margin-top:20px}
 .coupon{position:relative;padding:0 20px;margin-bottom:20px;text-align:center}
 @media screen and (min-width:900px){.coupon{padding:0 40px}
@@ -2400,6 +2405,8 @@ section.faqs{width:100%;float:left}
 .coupon .coupon_description{margin-top:10px}
 .coupon .coupon_description p{margin-top:0;margin-bottom:10px;line-height:1.3;font-size:12px}
 .coupon .coupon_description a{color:#16325b;text-decoration:none;font-weight:bold}
+.rformBtn{display:inline-block;text-decoration:none;background:#047956;color:#FFF;font-size:16px;font-weight:600;padding:8px 20px;border-radius:5px}
+.rformBtn:hover{color:#FFF;background:#1da97f}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

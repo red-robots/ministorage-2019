@@ -140,6 +140,19 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+	$(document).on("click",".tab-label",function(e){
+		e.preventDefault();
+		var $this = $(this);
+		var tabname = $this.attr('data-rel');
+		var parent = $(this).parents(".tab-content");
+		parent.toggleClass('active');
+	});
+
+	// $(document).on("click",".testBtnn",function(e){
+	// 	e.preventDefault();
+	// 	alert('test!');
+	// });
+
 
 	$('.swipe-projects').slick({
 		dots: true,

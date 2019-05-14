@@ -117,16 +117,19 @@ get_header(); ?>
 				}
 				
 			?>
+
 			<div class="location-tabs tabswrapper clear">
 				<ul id="locationInfoTabs" class="tabs-style">
 					<?php $i=1; foreach ($tablabels as $tabname) { $default_active = ($i==1) ? ' active':''; ?>
 					<li data-panel="#details<?php echo $i?>" class="tabName tab<?php echo $default_active;?>"><a><span><?php echo $tabname ?></span></a></li>
 					<?php $i++; } ?>
 				</ul>
+				
+
 				<div class="tab-content-wrapper clear">
 					<?php /* Location, Contact & Hours */ ?>
 					<div id="details1" class="tab-content active">
-						<h2 data-panel="#details1" class="tab-title location_tabname tabName active"><?php echo $tablabels[0]; ?> <span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></h2>
+						<a href="#" data-rel="#details1" class="tab-label"><?php echo $tablabels[0]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
 						<div class="tab-inner-content clear">
 							<div class="innerpad clear">
 								<div class="content-left">
@@ -179,7 +182,7 @@ get_header(); ?>
 
 					<?php /* Storage Units, Pricing & Amenitites */ ?>
 					<div id="details2" class="tab-content">
-						<h2 data-panel="#details2" class="tab-title location_tabname tabName"><?php echo $tablabels[1]; ?> <span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></h2>
+						<a href="#" data-rel="#details2" class="tab-label"><?php echo $tablabels[1]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
 						<div class="tab-inner-content clear">
 							<div class="innerpad clear">
 								<?php if($feature_lists) { ?>
@@ -226,14 +229,22 @@ get_header(); ?>
 
 					<?php /* Make A Reservation */ ?>
 					<div id="details3" class="tab-content">
-						<h2 data-panel="#details3" class="tab-title location_tabname tabName"><?php echo $tablabels[2]; ?> <span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></h2>
+						<a href="#" data-rel="#details3" class="tab-label"><?php echo $tablabels[2]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
 						<div class="tab-inner-content clear">
 							<div class="innerpad clear">
 								<?php if ($make_a_reservation) { ?>
 									<div class="infowrap"><?php echo $make_a_reservation; ?></div>
 								<?php } ?>
-								<?php if ($iframe_res) { ?>
-									<div class="infowrap"><?php echo $iframe_res; ?></div>
+
+								<?php if ($iframe_res) { 
+									preg_match('/src="([^"]+)"/', $iframe_res, $match);
+									$iframe_res_src = $match[1];
+									?>
+									<?php if ( wp_is_mobile() ) { ?>
+										<div class="infowrap text-center"><a href="<?php echo $iframe_res_src ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
+									<?php } else { ?>
+										<div class="infowrap iframediv"><?php echo $iframe_res; ?></div>
+									<?php } ?>
 								<?php } ?>
 							</div>
 						</div>
@@ -241,22 +252,31 @@ get_header(); ?>
 
 					<?php /* Make A Payment */ ?>
 					<div id="details4" class="tab-content">
-						<h2 data-panel="#details4" class="tab-title location_tabname tabName"><?php echo $tablabels[3]; ?> <span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></h2>
+						<a href="#" data-rel="#details4" class="tab-label"><?php echo $tablabels[3]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
 						<div class="tab-inner-content clear">
 							<div class="innerpad clear">
 								<?php if ($make_a_payment) { ?>
 									<div class="infowrap"><?php echo $make_a_payment; ?></div>
 								<?php } ?>
-								<?php if ($iframe_pay) { ?>
-									<div class="infowrap"><?php echo $iframe_pay; ?></div>
+
+								<?php if ($iframe_pay) { 
+									preg_match('/src="([^"]+)"/', $iframe_pay, $matchpay);
+									$iframe_pay_src = $matchpay[1];
+									?>
+									<?php if ( wp_is_mobile() ) { ?>
+										<div class="infowrap text-center"><a href="<?php echo $iframe_pay_src ?>" target="_blank" class="rformBtn">Pay Online</a></div>
+									<?php } else { ?>
+										<div class="infowrap iframediv"><?php echo $iframe_pay; ?></div>
+									<?php } ?>
 								<?php } ?>
+
 							</div>
 						</div>
 					</div>
 
 					<?php /* Special Savings */ ?>
 					<div id="details5" class="tab-content">
-						<h2 data-panel="#details5" class="tab-title location_tabname tabName"><?php echo $tablabels[4]; ?> <span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></h2>
+						<a href="#" data-rel="#details5" class="tab-label"><?php echo $tablabels[4]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
 						<div class="tab-inner-content clear">
 							<div class="innerpad clear">
 								<?php if ($special_savings) { ?>
@@ -266,6 +286,8 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
+
+
 			</div><!-- end tabs-->
 
 			<?php if ($galleries) { ?>
