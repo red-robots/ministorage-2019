@@ -2407,6 +2407,10 @@ section.faqs{width:100%;float:left}
 .coupon .coupon_description a{color:#16325b;text-decoration:none;font-weight:bold}
 .rformBtn{display:inline-block;text-decoration:none;background:#047956;color:#FFF;font-size:16px;font-weight:600;padding:8px 20px;border-radius:5px}
 .rformBtn:hover{color:#FFF;background:#1da97f}
+.offers-text{font-size:1.6rem;width:100%;margin:0}
+.offers-text p{margin:0}
+.cta-call{font-size:2.2rem;width:100%;text-align:center}
+.cta-call.first{margin-bottom:10px;width:100%;float:left}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

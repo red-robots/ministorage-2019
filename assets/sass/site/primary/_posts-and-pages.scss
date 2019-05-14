@@ -2103,6 +2103,24 @@ section.faqs {
 		background: #1da97f;
 	}
 }
+.offers-text {
+	font-size: 1.6rem;
+	width: 100%;
+	margin: 0;
 
+	p {
+		margin: 0;
+	}
+}
+.cta-call {
+	font-size: 2.2rem;
+	width: 100%;
+	text-align: center;
+	&.first {
+		margin-bottom: 10px;
+		width: 100%;
+		float: left;
+	}
+}
 
 
