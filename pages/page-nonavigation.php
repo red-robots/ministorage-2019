@@ -265,22 +265,13 @@ get_header(); ?>
 				</div>
 
 				<div class="widget-contact-info sticky_sidebar">
-					<div class="sidebar__innerz sidebarpad clear">
+					<div class="sidebar__inner sidebarpad clear">
 					<?php if ($contact_details) { ?>
 					<div class="contact-details">
 						<div id="phoneInfoArea" class="innerWrap clear">
 						<?php echo $contact_details; ?>
 						</div>
-						<div id="gformArea" class="gform-outside-wrap clear"></div>
-					</div>
-					<?php } ?>
-					</div>
-					
-
-					<?php if ($form) { ?>
-					<div class="contact-details">
-						<div id="phoneInfoArea" class="innerWrap clear">
-							<?php
+						<?php
 							$wp_query = new WP_Query(array('pagename'=>'homepage'));
 							if ( have_posts() ) : the_post(); 
 							$coupon_title1 = get_field('coupon_title1'); 
@@ -308,6 +299,16 @@ get_header(); ?>
 								} 
 								endif;
 								?>
+						<div id="gformArea" class="gform-outside-wrap clear"></div>
+					</div>
+					<?php } ?>
+					</div>
+					
+
+					<?php if ($form) { ?>
+					<div class="contact-details">
+						<div id="phoneInfoArea" class="innerWrap clear">
+							
 						<?php echo $form; ?>
 						</div>
 						<div id="gformArea" class="gform-outside-wrap clear"></div>
