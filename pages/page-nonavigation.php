@@ -73,7 +73,7 @@ get_header(); ?>
 								
 							<?php echo $form; ?>
 							</div>
-							<div id="gformArea" class="gform-outside-wrap clear"></div>
+							
 						</div>
 						<?php } ?>
 					</div>
