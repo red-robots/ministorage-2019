@@ -278,38 +278,39 @@ get_header(); ?>
 					</div>
 					<?php } ?>
 					</div>
-					<?php
-					$wp_query = new WP_Query(array('pagename'=>'homepage'));
-					if ( have_posts() ) : the_post(); 
-					$coupon_title1 = get_field('coupon_title1'); 
-					$coupon_title2 = get_field('coupon_title2'); 
-					$coupon_description = get_field('coupon_description'); 
-						if($coupon_title1 || $coupon_title2) { ?>
-							<div class="coupon">
-								<div class="c_inside clear">
-									<div class="wrap">
-										<?php if ($coupon_title1) { ?>
-										<div class="line1"><?php echo $coupon_title1 ?></div>
-										<?php } ?>
-										<?php if ($coupon_title2) { ?>
-										<div class="line2"><?php echo $coupon_title2 ?></div>
-										<?php } ?>
-										<?php if ($coupon_description) { ?>
-										<div class="coupon_description">
-										Ask about this coupon at any storage locations managed by Waters Incorporated. Valid for new customers only | Pricing may vary per location.
-										</div>
-										<?php } ?>
-									</div>
-								</div>
-							</div>
-						<?php 
-						} 
-						endif;
-						?>
+					
 
 					<?php if ($form) { ?>
 					<div class="contact-details">
 						<div id="phoneInfoArea" class="innerWrap clear">
+							<?php
+							$wp_query = new WP_Query(array('pagename'=>'homepage'));
+							if ( have_posts() ) : the_post(); 
+							$coupon_title1 = get_field('coupon_title1'); 
+							$coupon_title2 = get_field('coupon_title2'); 
+							$coupon_description = get_field('coupon_description'); 
+								if($coupon_title1 || $coupon_title2) { ?>
+									<div class="coupon ctac">
+										<div class="c_inside clear">
+											<div class="wrap">
+												<?php if ($coupon_title1) { ?>
+												<div class="line1"><?php echo $coupon_title1 ?></div>
+												<?php } ?>
+												<?php if ($coupon_title2) { ?>
+												<div class="line2"><?php echo $coupon_title2 ?></div>
+												<?php } ?>
+												<?php if ($coupon_description) { ?>
+												<div class="coupon_description">
+												Ask about this coupon at any storage locations managed by Waters Incorporated. Valid for new customers only | Pricing may vary per location.
+												</div>
+												<?php } ?>
+											</div>
+										</div>
+									</div>
+								<?php 
+								} 
+								endif;
+								?>
 						<?php echo $form; ?>
 						</div>
 						<div id="gformArea" class="gform-outside-wrap clear"></div>

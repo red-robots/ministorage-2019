@@ -2398,7 +2398,8 @@ section.faqs{width:100%;float:left}
 #details2 iframe{position:relative;left:13px;margin-top:20px}
 .coupon{position:relative;padding:0 20px;margin-bottom:20px;text-align:center}
 @media screen and (min-width:900px){.coupon{padding:0 40px}
-}.coupon .c_inside{background-color:#1db358;padding:10px}
+}.coupon.ctac{padding:0}
+.coupon .c_inside{background-color:#1db358;padding:10px}
 .coupon .wrap{padding:15px 15px 10px;border:1px dashed rgba(255,255,255,0.85)}
 .coupon .line1{font-family:'Patua One',cursive;font-size:20px;font-weight:800;text-transform:uppercase;line-height:1.2;text-shadow:1px 1px 1px rgba(255,255,255,0.25)}
 .coupon .line2{font-size:20px;font-weight:300;line-height:1.1}

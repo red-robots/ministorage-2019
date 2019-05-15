@@ -2053,6 +2053,9 @@ section.faqs {
 	@media screen and (min-width: $midwidth) {
 		padding: 0 40px;
 	}
+	&.ctac {
+		padding: 0;
+	}
 	.c_inside {
 		background-color: #1DB358;
 		padding: 10px;
