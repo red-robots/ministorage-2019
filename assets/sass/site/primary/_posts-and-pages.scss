@@ -2102,9 +2102,11 @@ section.faqs {
 	@media screen and (min-width: $tabwidth) {
 		width: auto;
 	}
-	&:hover {
-		color: #FFF;
+	&:hover, &:focus {
 		background: #1da97f;
+	}
+	&:active, &:visited {
+		color: #FFF;
 	}
 }
 .offers-text {

@@ -2407,7 +2407,8 @@ section.faqs{width:100%;float:left}
 .coupon .coupon_description a{color:#16325b;text-decoration:none;font-weight:bold}
 .rformBtn{display:inline-block;text-decoration:none;background:#047956;color:#FFF;font-size:16px;font-weight:600;padding:8px 20px;border-radius:5px;width:100%}
 @media screen and (min-width:600px){.rformBtn{width:auto}
-}.rformBtn:hover{color:#FFF;background:#1da97f}
+}.rformBtn:hover,.rformBtn:focus{background:#1da97f}
+.rformBtn:active,.rformBtn:visited{color:#FFF}
 .offers-text{font-size:1.6rem;width:100%;margin:0}
 .offers-text p{margin:0}
 .cta-call{font-size:2.2rem;width:100%;text-align:center}

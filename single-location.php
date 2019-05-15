@@ -236,11 +236,11 @@ get_header(); ?>
 									<div class="infowrap"><?php echo $make_a_reservation; ?></div>
 								<?php } ?>
 
-								<?php if ($iframe_res) { 
-									preg_match('/src="([^"]+)"/', $iframe_res, $match);
-									$iframe_res_src = $match[1];
-									?>
-									<div class="infowrap text-center"><a href="<?php echo $iframe_res_src ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
+								<?php $make_a_reservation_link = get_field('make_a_reservation_link'); ?>
+								<?php if ($make_a_reservation_link) { 
+									//preg_match('/src="([^"]+)"/', $iframe_res, $match);
+									//$iframe_res_src = $match[1]; ?>
+									<div class="infowrap text-center"><a href="<?php echo $make_a_reservation_link ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
 								<?php } ?>
 							</div>
 						</div>
@@ -255,11 +255,11 @@ get_header(); ?>
 									<div class="infowrap"><?php echo $make_a_payment; ?></div>
 								<?php } ?>
 
-								<?php if ($iframe_pay) { 
-									preg_match('/src="([^"]+)"/', $iframe_pay, $matchpay);
-									$iframe_pay_src = $matchpay[1];
-									?>
-									<div class="infowrap text-center"><a href="<?php echo $iframe_pay_src ?>" target="_blank" class="rformBtn">Pay Online</a></div>
+								<?php $make_a_payment_link = get_field('make_a_payment_link'); ?>
+								<?php if ($make_a_payment_link) { 
+									//preg_match('/src="([^"]+)"/', $iframe_pay, $matchpay);
+									//$iframe_pay_src = $matchpay[1]; ?>
+									<div class="infowrap text-center"><a href="<?php echo $make_a_payment_link ?>" target="_blank" class="rformBtn">Pay Online</a></div>
 								<?php } ?>
 
 							</div>
