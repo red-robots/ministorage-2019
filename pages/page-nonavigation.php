@@ -23,6 +23,63 @@ get_header(); ?>
 
 					<div class="cta-call first"><b>Call: <?php echo $callrail; ?></b></div>
 					<div class="clear"></div>
+
+
+
+					<div class="mobileonly">
+						<div class="sidebar__inner sidebarpad clear">
+						<?php if ($contact_details) { ?>
+						<div class="contact-details">
+							<div id="phoneInfoArea" class="innerWrap clear">
+							<?php echo $contact_details; ?>
+							</div>
+							<?php
+								$wp_query = new WP_Query(array('pagename'=>'homepage'));
+								if ( have_posts() ) : the_post(); 
+								$coupon_title1 = get_field('coupon_title1'); 
+								$coupon_title2 = get_field('coupon_title2'); 
+								$coupon_description = get_field('coupon_description'); 
+									if($coupon_title1 || $coupon_title2) { ?>
+										<div class="coupon ctac">
+											<div class="c_inside clear">
+												<div class="wrap">
+													<?php if ($coupon_title1) { ?>
+													<div class="line1"><?php echo $coupon_title1 ?></div>
+													<?php } ?>
+													<?php if ($coupon_title2) { ?>
+													<div class="line2"><?php echo $coupon_title2 ?></div>
+													<?php } ?>
+													<?php if ($coupon_description) { ?>
+													<div class="coupon_description">
+													Ask about this coupon at any storage locations managed by Waters Incorporated. Valid for new customers only | Pricing may vary per location.
+													</div>
+													<?php } ?>
+												</div>
+											</div>
+										</div>
+									<?php 
+									} 
+									endif;
+									?>
+							<div id="gformArea" class="gform-outside-wrap clear"></div>
+						</div>
+						<?php } ?>
+						</div>
+					
+
+						<?php if ($form) { ?>
+						<div class="contact-details">
+							<div id="phoneInfoArea" class="innerWrap clear">
+								
+							<?php echo $form; ?>
+							</div>
+							<div id="gformArea" class="gform-outside-wrap clear"></div>
+						</div>
+						<?php } ?>
+					</div>
+
+
+
 					<?php 
 						// get Myrtle Beach location 864
 						$post = get_post(864); 
@@ -264,6 +321,11 @@ get_header(); ?>
 					<?php get_template_part('template-parts/latest-testimonials'); ?>
 				</div>
 
+
+
+
+
+				<div class="nomobile">
 				<div class="widget-contact-info sticky_sidebar">
 					<div class="sidebar__inner sidebarpad clear">
 					<?php if ($contact_details) { ?>
@@ -315,6 +377,7 @@ get_header(); ?>
 					</div>
 					<?php } ?>
 				</div>
+				</div> <!-- no mobile -->
 			</article>
 			
 			<div id="sticky_stopper" class="sticky-stopper clear"></div>

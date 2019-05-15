@@ -177,3 +177,15 @@ h1.entry-title,
 		display: block;
 	}
 }
+.mobileonly {
+	display: block;
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+}
+.nomobile{
+	display: none;
+	@media screen and (min-width: $tabwidth) {
+		display: block;
+	}
+}
