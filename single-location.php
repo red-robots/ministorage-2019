@@ -129,7 +129,7 @@ get_header(); ?>
 				<div class="tab-content-wrapper clear">
 					<?php /* Location, Contact & Hours */ ?>
 					<div id="details1" class="tab-content active">
-						<a href="#" data-rel="#details1" class="tab-label"><?php echo $tablabels[0]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
+						<a href="#" data-rel="#details1" class="tab-label first"><?php echo $tablabels[0]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
 						<div class="tab-inner-content clear">
 							<div class="innerpad clear">
 								<div class="content-left">
@@ -240,11 +240,7 @@ get_header(); ?>
 									preg_match('/src="([^"]+)"/', $iframe_res, $match);
 									$iframe_res_src = $match[1];
 									?>
-									<?php if ( wp_is_mobile() ) { ?>
-										<div class="infowrap text-center"><a href="<?php echo $iframe_res_src ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
-									<?php } else { ?>
-										<div class="infowrap iframediv"><?php echo $iframe_res; ?></div>
-									<?php } ?>
+									<div class="infowrap text-center"><a href="<?php echo $iframe_res_src ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
 								<?php } ?>
 							</div>
 						</div>
@@ -263,11 +259,7 @@ get_header(); ?>
 									preg_match('/src="([^"]+)"/', $iframe_pay, $matchpay);
 									$iframe_pay_src = $matchpay[1];
 									?>
-									<?php if ( wp_is_mobile() ) { ?>
-										<div class="infowrap text-center"><a href="<?php echo $iframe_pay_src ?>" target="_blank" class="rformBtn">Pay Online</a></div>
-									<?php } else { ?>
-										<div class="infowrap iframediv"><?php echo $iframe_pay; ?></div>
-									<?php } ?>
+									<div class="infowrap text-center"><a href="<?php echo $iframe_pay_src ?>" target="_blank" class="rformBtn">Pay Online</a></div>
 								<?php } ?>
 
 							</div>
