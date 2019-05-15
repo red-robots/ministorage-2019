@@ -2098,6 +2098,10 @@ section.faqs {
 	font-weight: 600;
 	padding: 8px 20px;
 	border-radius: 5px;
+	width: 100%;
+	@media screen and (min-width: $tabwidth) {
+		width: auto;
+	}
 	&:hover {
 		color: #FFF;
 		background: #1da97f;
@@ -2120,6 +2124,19 @@ section.faqs {
 		margin-bottom: 10px;
 		width: 100%;
 		float: left;
+	}
+}
+
+.slick-next {
+	right: -18px;
+	@media screen and (min-width: $tabwidth) {
+		right: -25px;
+	}
+}
+.slick-prev {
+	left: -18px;
+	@media screen and (min-width: $tabwidth) {
+		left: -25px;
 	}
 }
 

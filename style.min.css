@@ -2405,13 +2405,18 @@ section.faqs{width:100%;float:left}
 .coupon .coupon_description{margin-top:10px}
 .coupon .coupon_description p{margin-top:0;margin-bottom:10px;line-height:1.3;font-size:12px}
 .coupon .coupon_description a{color:#16325b;text-decoration:none;font-weight:bold}
-.rformBtn{display:inline-block;text-decoration:none;background:#047956;color:#FFF;font-size:16px;font-weight:600;padding:8px 20px;border-radius:5px}
-.rformBtn:hover{color:#FFF;background:#1da97f}
+.rformBtn{display:inline-block;text-decoration:none;background:#047956;color:#FFF;font-size:16px;font-weight:600;padding:8px 20px;border-radius:5px;width:100%}
+@media screen and (min-width:600px){.rformBtn{width:auto}
+}.rformBtn:hover{color:#FFF;background:#1da97f}
 .offers-text{font-size:1.6rem;width:100%;margin:0}
 .offers-text p{margin:0}
 .cta-call{font-size:2.2rem;width:100%;text-align:center}
 .cta-call.first{margin-bottom:10px;width:100%;float:left}
-.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+.slick-next{right:-18px}
+@media screen and (min-width:600px){.slick-next{right:-25px}
+}.slick-prev{left:-18px}
+@media screen and (min-width:600px){.slick-prev{left:-25px}
+}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
