@@ -2414,8 +2414,9 @@ section.faqs{width:100%;float:left}
 @media screen and (min-width:600px){.rformBtn{width:auto}
 }.rformBtn:hover,.rformBtn:focus{background:#1da97f}
 .rformBtn:active,.rformBtn:visited{color:#FFF}
-.offers-text{font-size:1.5rem;width:100%;margin:0}
-.offers-text p{margin:0 0 20px 0}
+.offers-text{width:100%;margin:0}
+@media screen and (min-width:1200px){.offers-text{font-size:1.5rem}
+}.offers-text p{margin:0 0 20px 0}
 .cta-call{font-size:2.2rem;width:100%;text-align:center}
 .cta-call.first{margin-bottom:20px;width:100%;float:left}
 .slick-next{right:-18px}
