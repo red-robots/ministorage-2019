@@ -265,10 +265,7 @@ get_header(); ?>
 				</div>
 
 				<div class="widget-contact-info sticky_sidebar">
-					<div class="sidebar__inner sidebarpad clear">
-					<?php 
-					 
-					?>
+					<div class="sidebar__innerz sidebarpad clear">
 					<?php if ($contact_details) { ?>
 					<div class="contact-details">
 						<div id="phoneInfoArea" class="innerWrap clear">
