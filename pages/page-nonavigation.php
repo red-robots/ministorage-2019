@@ -61,7 +61,7 @@ get_header(); ?>
 									} 
 									endif;
 									?>
-							<div id="gformArea" class="gform-outside-wrap clear"></div>
+							
 						</div>
 						<?php } ?>
 						</div>
