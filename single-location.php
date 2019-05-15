@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="full-content-area wrapper single-location-page">
+	<div id="primary" class="full-content-area wrapper single-location-page single-location-info">
 		<main id="main" class="site-main clear" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
