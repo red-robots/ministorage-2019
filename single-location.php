@@ -237,9 +237,7 @@ get_header(); ?>
 								<?php } ?>
 
 								<?php $make_a_reservation_link = get_field('make_a_reservation_link'); ?>
-								<?php if ($make_a_reservation_link) { 
-									//preg_match('/src="([^"]+)"/', $iframe_res, $match);
-									//$iframe_res_src = $match[1]; ?>
+								<?php if ($make_a_reservation_link) { ?>
 									<div class="infowrap text-center"><a href="<?php echo $make_a_reservation_link ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
 								<?php } ?>
 							</div>
@@ -256,9 +254,7 @@ get_header(); ?>
 								<?php } ?>
 
 								<?php $make_a_payment_link = get_field('make_a_payment_link'); ?>
-								<?php if ($make_a_payment_link) { 
-									//preg_match('/src="([^"]+)"/', $iframe_pay, $matchpay);
-									//$iframe_pay_src = $matchpay[1]; ?>
+								<?php if ($make_a_payment_link) { ?>
 									<div class="infowrap text-center"><a href="<?php echo $make_a_payment_link ?>" target="_blank" class="rformBtn">Pay Online</a></div>
 								<?php } ?>
 
