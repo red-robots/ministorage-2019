@@ -2423,6 +2423,10 @@ section.faqs{width:100%;float:left}
 @media screen and (min-width:600px){.slick-next{right:-25px}
 }.slick-prev{left:-18px}
 @media screen and (min-width:600px){.slick-prev{left:-25px}
+}.iframeMobile{display:none}
+@media screen and (min-width:600px){.iframeMobile{display:block}
+}.mobileViewDiv{display:block}
+@media screen and (min-width:600px){.mobileViewDiv{display:none}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

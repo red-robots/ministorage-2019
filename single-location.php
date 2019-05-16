@@ -235,11 +235,20 @@ get_header(); ?>
 								<?php if ($make_a_reservation) { ?>
 									<div class="infowrap"><?php echo $make_a_reservation; ?></div>
 								<?php } ?>
-
 								<?php $make_a_reservation_link = get_field('make_a_reservation_link'); ?>
-								<?php if ($make_a_reservation_link) { ?>
-									<div class="infowrap text-center"><a href="<?php echo $make_a_reservation_link ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
+								<?php if ( isMobileDevice() ) { ?>
+									<?php if ($make_a_reservation_link) { ?>
+										<div class="infowrap text-center"><a href="<?php echo $make_a_reservation_link ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
+									<?php } ?>
+								<?php } else { ?>
+									<?php if ($iframe_res) { ?>
+										<div class="infowrap iframediv iframeMobile"><?php echo $iframe_res; ?></div>
+									<?php } ?>
+									<?php if ($make_a_reservation_link) { ?>
+										<div class="mobileViewDiv infowrap text-center"><a href="<?php echo $make_a_reservation_link ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
+									<?php } ?>
 								<?php } ?>
+
 							</div>
 						</div>
 					</div>
@@ -254,10 +263,18 @@ get_header(); ?>
 								<?php } ?>
 
 								<?php $make_a_payment_link = get_field('make_a_payment_link'); ?>
-								<?php if ($make_a_payment_link) { ?>
-									<div class="infowrap text-center"><a href="<?php echo $make_a_payment_link ?>" target="_blank" class="rformBtn">Pay Online</a></div>
+								<?php if ( isMobileDevice() ) { ?>
+									<?php if ($make_a_payment_link) { ?>
+										<div class="infowrap text-center"><a href="<?php echo $make_a_payment_link ?>" target="_blank" class="rformBtn">Pay Online</a></div>
+									<?php } ?>
+								<?php } else { ?>
+									<?php if ($iframe_pay) { ?>
+										<div class="infowrap iframediv iframeMobile"><?php echo $iframe_pay; ?></div>
+									<?php } ?>
+									<?php if ($make_a_payment_link) { ?>
+										<div class="mobileViewDiv infowrap text-center"><a href="<?php echo $make_a_payment_link ?>" target="_blank" class="rformBtn">Pay Online</a></div>
+									<?php } ?>
 								<?php } ?>
-
 							</div>
 						</div>
 					</div>
