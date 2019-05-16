@@ -266,51 +266,13 @@ get_header(); ?>
 					</div>
 
 					<?php /* Make A Reservation */ ?>
-					<div id="details3" class="tab-content">
-						<a href="#" data-rel="#details3" class="tab-label"><?php echo $tablabels[2]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
-						<div class="tab-inner-content clear">
-							<div class="innerpad clear">
-								<?php if ($make_a_reservation) { ?>
-									<div class="infowrap"><?php echo $make_a_reservation; ?></div>
-								<?php } ?>
-
-								<?php $make_a_reservation_link = get_field('make_a_reservation_link'); ?>
-								<?php if ($make_a_reservation_link) { ?>
-									<div class="infowrap text-center"><a href="<?php echo $make_a_reservation_link ?>" target="_blank" class="rformBtn">Reservation Request Form</a></div>
-								<?php } ?>
-							</div>
-						</div>
-					</div>
+					
 
 					<?php /* Make A Payment */ ?>
-					<div id="details4" class="tab-content">
-						<a href="#" data-rel="#details4" class="tab-label"><?php echo $tablabels[3]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
-						<div class="tab-inner-content clear">
-							<div class="innerpad clear">
-								<?php if ($make_a_payment) { ?>
-									<div class="infowrap"><?php echo $make_a_payment; ?></div>
-								<?php } ?>
-
-								<?php $make_a_payment_link = get_field('make_a_payment_link'); ?>
-								<?php if ($make_a_payment_link) { ?>
-									<div class="infowrap text-center"><a href="<?php echo $make_a_payment_link ?>" target="_blank" class="rformBtn">Pay Online</a></div>
-								<?php } ?>
-
-							</div>
-						</div>
-					</div>
+					
 
 					<?php /* Special Savings */ ?>
-					<div id="details5" class="tab-content">
-						<a href="#" data-rel="#details5" class="tab-label"><?php echo $tablabels[4]; ?><span class="arrow"><i class="fas fa-arrow-circle-down"></i></span></a>
-						<div class="tab-inner-content clear">
-							<div class="innerpad clear">
-								<?php if ($special_savings) { ?>
-									<div class="infowrap"><?php echo $special_savings; ?></div>
-								<?php } ?>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 
 
@@ -327,40 +289,43 @@ get_header(); ?>
 
 				<div class="nomobile">
 				<div class="widget-contact-info sticky_sidebar">
+
+					<?php
+					$wp_query = new WP_Query(array('pagename'=>'homepage'));
+					if ( have_posts() ) : the_post(); 
+					$coupon_title1 = get_field('coupon_title1'); 
+					$coupon_title2 = get_field('coupon_title2'); 
+					$coupon_description = get_field('coupon_description'); 
+						if($coupon_title1 || $coupon_title2) { ?>
+							<div class="coupon ctac">
+								<div class="c_inside clear">
+									<div class="wrap">
+										<?php if ($coupon_title1) { ?>
+										<div class="line1"><?php echo $coupon_title1 ?></div>
+										<?php } ?>
+										<?php if ($coupon_title2) { ?>
+										<div class="line2"><?php echo $coupon_title2 ?></div>
+										<?php } ?>
+										<?php if ($coupon_description) { ?>
+										<div class="coupon_description">
+										Ask about this coupon at any storage locations managed by Waters Incorporated. Valid for new customers only | Pricing may vary per location.
+										</div>
+										<?php } ?>
+									</div>
+								</div>
+							</div>
+						<?php 
+						} 
+						endif;
+						?>
+				
 					<div class="sidebar__inner sidebarpad clear">
 					<?php if ($contact_details) { ?>
 					<div class="contact-details">
 						<div id="phoneInfoArea" class="innerWrap clear">
 						<?php echo $contact_details; ?>
 						</div>
-						<?php
-							$wp_query = new WP_Query(array('pagename'=>'homepage'));
-							if ( have_posts() ) : the_post(); 
-							$coupon_title1 = get_field('coupon_title1'); 
-							$coupon_title2 = get_field('coupon_title2'); 
-							$coupon_description = get_field('coupon_description'); 
-								if($coupon_title1 || $coupon_title2) { ?>
-									<div class="coupon ctac">
-										<div class="c_inside clear">
-											<div class="wrap">
-												<?php if ($coupon_title1) { ?>
-												<div class="line1"><?php echo $coupon_title1 ?></div>
-												<?php } ?>
-												<?php if ($coupon_title2) { ?>
-												<div class="line2"><?php echo $coupon_title2 ?></div>
-												<?php } ?>
-												<?php if ($coupon_description) { ?>
-												<div class="coupon_description">
-												Ask about this coupon at any storage locations managed by Waters Incorporated. Valid for new customers only | Pricing may vary per location.
-												</div>
-												<?php } ?>
-											</div>
-										</div>
-									</div>
-								<?php 
-								} 
-								endif;
-								?>
+						
 						<div id="gformArea" class="gform-outside-wrap clear"></div>
 					</div>
 					<?php } ?>
