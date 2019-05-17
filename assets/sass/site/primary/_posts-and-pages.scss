@@ -2112,6 +2112,11 @@ section.faqs {
 		color: #FFF;
 	}
 }
+.offerup {
+	@media screen and (min-width: $tabwidth) {
+		margin-top: -180px;
+	}
+}
 .offers-text {
 	
 	width: 100%;

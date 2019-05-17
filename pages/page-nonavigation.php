@@ -14,10 +14,11 @@ get_header(); ?>
 				$form = get_field('form');
 				$callrail = get_field('call_rail');
 			endwhile; ?>
-			<header class="entry-header">
-				<?php the_title( '<p class="entry-title">', '</p>' ); ?>
-			</header><!-- .entry-header -->
+			
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<header class="entry-header">
+					<?php the_title( '<p class="entry-title">', '</p>' ); ?>
+				</header><!-- .entry-header -->
 				<div class="content-area-wrap">
 					<div class="offers-text"><?php the_content(); ?></div>
 
@@ -27,7 +28,7 @@ get_header(); ?>
 
 
 					<div class="mobileonly">
-						<div class="sidebar__inner sidebarpad clear">
+						<div class="sidebar__inner sidebarpad clear ">
 						<?php if ($contact_details) { ?>
 						<div class="contact-details">
 							<div id="phoneInfoArea" class="innerWrap clear">
@@ -288,7 +289,7 @@ get_header(); ?>
 
 
 				<div class="nomobile">
-				<div class="widget-contact-info sticky_sidebar">
+				<div class="widget-contact-info sticky_sidebar offerup">
 
 					<?php
 					$wp_query = new WP_Query(array('pagename'=>'homepage'));
@@ -324,23 +325,25 @@ get_header(); ?>
 					<div class="contact-details">
 						<div id="phoneInfoArea" class="innerWrap clear">
 						<?php echo $contact_details; ?>
+						<div id="gformArea" class="gform-outside-wrap clear"></div>
+
+						<?php if ($form) { ?>
+						
+								
+							<?php echo $form; ?>
+							
+						<?php } ?>
 						</div>
 						
-						<div id="gformArea" class="gform-outside-wrap clear"></div>
+						
+
+
 					</div>
 					<?php } ?>
 					</div>
 					
 
-					<?php if ($form) { ?>
-					<div class="contact-details">
-						<div id="phoneInfoArea" class="innerWrap clear">
-							
-						<?php echo $form; ?>
-						</div>
-						<div id="gformArea" class="gform-outside-wrap clear"></div>
-					</div>
-					<?php } ?>
+					
 				</div>
 				</div> <!-- no mobile -->
 			</article>
