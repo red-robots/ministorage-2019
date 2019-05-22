@@ -21,7 +21,9 @@
 <?php wp_head(); ?>
 <?php 
 $analytics = get_field('google_analytics','option'); 
+$tManager = get_field('google_tag_manager','option'); 
 //echo $analytics;
+echo $tManager;
 ?>
 
 <!-- Hotjar Tracking Code for https://ministoragecarolina.com/ -->
