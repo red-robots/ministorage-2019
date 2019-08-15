@@ -1160,6 +1160,16 @@ body .gform_wrapper .gform_body .top_label div.ginput_container {
 .location-tabs {
 	margin-top: 40px;
 }
+body.parent-pageid-1293 {
+	.tab-inner-content {
+		max-height: 1000px;
+		opacity: 1;
+		@media screen and (min-width: $tabwidth) {
+			max-height: 0;
+			opacity: 0;
+		}
+	}
+}
 .tabswrapper {
 	margin-bottom: 30px;
 	.tabs-style {
