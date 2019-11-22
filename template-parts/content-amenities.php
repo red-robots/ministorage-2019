@@ -17,7 +17,6 @@
     //         "Uhaul/ Moving Truck Rentals Available?",
     //         "Online Payment Option Available?",
     //         "Manager Lives On Site?",
-    //         "24 Hour Digital Surveillance?"
     //     );
     $headings = array(
             "Storage Location",
