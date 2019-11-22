@@ -6,17 +6,31 @@
         'post_status'      => 'publish',
         );
     $locations = get_posts($args);
+    // $headings = array(
+    //         "Storage Location",
+    //         "Indoor Storage Available?",
+    //         "Climate Controlled Storage?",
+    //         "Office/ Warehouse Space Available?",
+    //         "Truck, RV, and/or Motorcycle Parking?",
+    //         "24/7 Access?",
+    //         "Packing Supplies Available?",
+    //         "Uhaul/ Moving Truck Rentals Available?",
+    //         "Online Payment Option Available?",
+    //         "Manager Lives On Site?",
+    //         "24 Hour Digital Surveillance?"
+    //     );
     $headings = array(
             "Storage Location",
-            "Indoor Storage Available?",
-            "Climate Controlled Storage?",
-            "Office/ Warehouse Space Available?",
-            "Truck, RV, and/or Motorcycle Parking?",
-            "24/7 Access?",
-            "Packing Supplies Available?",
-            "Uhaul/ Moving Truck Rentals Available?",
-            "Online Payment Option Available?",
-            "Manager Lives On Site?"
+            "Indoor Storage",
+            "Climate Controlled Storage",
+            "Office/ Warehouse Space",
+            "Truck, RV, and/or Motorcycle Parking",
+            "24/7 Access",
+            "Packing Supplies",
+            "Uhaul/ Moving Truck Rentals",
+            "Online Payment Option",
+            "Manager Lives On Site",
+            "24 Hour Digital Surveillance"
         );
     ?>
 
@@ -59,6 +73,7 @@
                     $online_reservations = get_field('online_reservations',$pid);
                     $online_payment = get_field('online_payment',$pid);
                     $manager_lives = get_field('other_amenities',$pid);
+                    $is_surveillance = get_field('surveillance',$pid);
                     $contents = array(
                             $location_name,
                             $indoor_storage,
@@ -69,7 +84,8 @@
                             $packing_supplies_available,
                             $truck_rentals,
                             $online_payment,
-                            $manager_lives
+                            $manager_lives,
+                            $is_surveillance
                         );
                     $rowClass = ( $ctr % 2 ) ? 'odd':'even';
                     ?>

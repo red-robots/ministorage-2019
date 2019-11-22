@@ -82,6 +82,7 @@ get_header(); ?>
 				$features[] = get_field_object('online_reservations');
 				$features[] = get_field_object('other_amenities');
 				$features[] = get_field_object('trailer_hitches');
+				$features[] = get_field_object('surveillance');
 
 				$size_pricing = get_field('size_pricing');
 				$iframe = get_field('iframe');
